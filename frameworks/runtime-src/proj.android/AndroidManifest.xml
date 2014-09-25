@@ -24,7 +24,24 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- for twitter start -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="ptouchtwittercallback" />
+            </intent-filter>
+            <!-- for twitter end -->
         </activity>
+
+        <!-- for Facebook SDK start -->
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id" />
+
+        <activity android:name="com.facebook.LoginActivity" />
+        <provider android:authorities="com.facebook.app.NativeAppCallContentProvider1545760462321569"
+                      android:name="com.facebook.NativeAppCallContentProvider"
+                                android:exported="true"/>
+        <!-- for Facebook SDK end -->
     </application>
 
     <supports-screens android:anyDensity="true"

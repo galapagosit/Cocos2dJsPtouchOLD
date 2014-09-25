@@ -53,6 +53,21 @@
 		509D4AE717EBB81800697056 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AE617EBB81800697056 /* OpenGL.framework */; };
 		509D4AE917EBB82000697056 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AE817EBB82000697056 /* AppKit.framework */; };
 		509D4AEB17EBB82600697056 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AEA17EBB82600697056 /* IOKit.framework */; };
+		8E9369D319D3C6B700460F03 /* LineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369CE19D3C6B700460F03 /* LineTool.m */; };
+		8E9369D419D3C6B700460F03 /* MailTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369D019D3C6B700460F03 /* MailTool.m */; };
+		8E9369D519D3C6B700460F03 /* TwitterTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369D219D3C6B700460F03 /* TwitterTool.mm */; };
+		8E9369DB19D3C70500460F03 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9369DA19D3C70500460F03 /* Social.framework */; };
+		8E9369DD19D3C76C00460F03 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9369DC19D3C76C00460F03 /* FacebookSDK.framework */; };
+		8E9369E319D3C81700460F03 /* FieldAuth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369E119D3C81700460F03 /* FieldAuth.cpp */; };
+		8E9369EC19D3C82500460F03 /* jsb_bridge_auto_api.js in Resources */ = {isa = PBXBuildFile; fileRef = 8E9369E619D3C82500460F03 /* jsb_bridge_auto_api.js */; };
+		8E9369ED19D3C82500460F03 /* Bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369E719D3C82500460F03 /* Bridge.cpp */; };
+		8E9369EE19D3C82500460F03 /* config_Bridge.ini in Resources */ = {isa = PBXBuildFile; fileRef = 8E9369E919D3C82500460F03 /* config_Bridge.ini */; };
+		8E9369EF19D3C82500460F03 /* jsb_bridge_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369EA19D3C82500460F03 /* jsb_bridge_auto.cpp */; };
+		8E9369F519D3C82E00460F03 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369F219D3C82E00460F03 /* sqlite3.c */; };
+		8E9369F719D3C8A100460F03 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9369F619D3C8A100460F03 /* MessageUI.framework */; };
+		8E936A0419D3CA1300460F03 /* libPluginProtocol.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9369FD19D3C9A800460F03 /* libPluginProtocol.a */; };
+		8E936A0519D3CA1800460F03 /* libPluginFacebook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E936A0319D3C9DC00460F03 /* libPluginFacebook.a */; };
+		8E936A0719D3D62E00460F03 /* jsb_pluginx.js in Resources */ = {isa = PBXBuildFile; fileRef = 8E936A0619D3D62E00460F03 /* jsb_pluginx.js */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
 		A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275431517C094001B78AA /* OpenGLES.framework */; };
 		A92275461517C094001B78AA /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275451517C094001B78AA /* OpenAL.framework */; };
@@ -202,6 +217,20 @@
 			remoteGlobalIDString = A07A4FB4178387730073F6A7;
 			remoteInfo = "CocosDenshion iOS";
 		};
+		8E9369FC19D3C9A800460F03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9369F819D3C9A700460F03 /* PluginProtocol.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA09A321168ADBC2008C1C7B;
+			remoteInfo = PluginProtocol;
+		};
+		8E936A0219D3C9DC00460F03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E9369FE19D3C9DB00460F03 /* PluginFacebook.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BA34A75D195AA8C7002D0ECD;
+			remoteInfo = PluginFacebook;
+		};
 		C037820618BF76AF00FE4F13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C037820118BF76AF00FE4F13 /* cocos2d_js_bindings.xcodeproj */;
@@ -269,6 +298,30 @@
 		509D4AE617EBB81800697056 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		509D4AE817EBB82000697056 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		509D4AEA17EBB82600697056 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		8E9369CD19D3C6B700460F03 /* LineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTool.h; sourceTree = "<group>"; };
+		8E9369CE19D3C6B700460F03 /* LineTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTool.m; sourceTree = "<group>"; };
+		8E9369CF19D3C6B700460F03 /* MailTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailTool.h; sourceTree = "<group>"; };
+		8E9369D019D3C6B700460F03 /* MailTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailTool.m; sourceTree = "<group>"; };
+		8E9369D119D3C6B700460F03 /* TwitterTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTool.h; sourceTree = "<group>"; };
+		8E9369D219D3C6B700460F03 /* TwitterTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TwitterTool.mm; sourceTree = "<group>"; };
+		8E9369DA19D3C70500460F03 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
+		8E9369DC19D3C76C00460F03 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/sdk/FacebookSDK.framework"; sourceTree = "<group>"; };
+		8E9369E019D3C81700460F03 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		8E9369E119D3C81700460F03 /* FieldAuth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldAuth.cpp; sourceTree = "<group>"; };
+		8E9369E219D3C81700460F03 /* FieldAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldAuth.h; sourceTree = "<group>"; };
+		8E9369E619D3C82500460F03 /* jsb_bridge_auto_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsb_bridge_auto_api.js; sourceTree = "<group>"; };
+		8E9369E719D3C82500460F03 /* Bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bridge.cpp; sourceTree = "<group>"; };
+		8E9369E819D3C82500460F03 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		8E9369E919D3C82500460F03 /* config_Bridge.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config_Bridge.ini; sourceTree = "<group>"; };
+		8E9369EA19D3C82500460F03 /* jsb_bridge_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_bridge_auto.cpp; sourceTree = "<group>"; };
+		8E9369EB19D3C82500460F03 /* jsb_bridge_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_bridge_auto.hpp; sourceTree = "<group>"; };
+		8E9369F219D3C82E00460F03 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		8E9369F319D3C82E00460F03 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		8E9369F419D3C82E00460F03 /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3ext.h; sourceTree = "<group>"; };
+		8E9369F619D3C8A100460F03 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		8E9369F819D3C9A700460F03 /* PluginProtocol.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PluginProtocol.xcodeproj; path = "../../js-bindings/cocos2d-x/plugin/protocols/proj.ios/PluginProtocol.xcodeproj"; sourceTree = "<group>"; };
+		8E9369FE19D3C9DB00460F03 /* PluginFacebook.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PluginFacebook.xcodeproj; path = "../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/PluginFacebook.xcodeproj"; sourceTree = "<group>"; };
+		8E936A0619D3D62E00460F03 /* jsb_pluginx.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = jsb_pluginx.js; path = "../../js-bindings/cocos2d-x/plugin/jsbindings/script/jsb_pluginx.js"; sourceTree = "<group>"; };
 		A922753D1517C094001B78AA /* Cocos2dJsPtouch iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocos2dJsPtouch iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A92275431517C094001B78AA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -318,6 +371,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E936A0519D3CA1800460F03 /* libPluginFacebook.a in Frameworks */,
+				8E936A0419D3CA1300460F03 /* libPluginProtocol.a in Frameworks */,
+				8E9369F719D3C8A100460F03 /* MessageUI.framework in Frameworks */,
+				8E9369DD19D3C76C00460F03 /* FacebookSDK.framework in Frameworks */,
+				8E9369DB19D3C70500460F03 /* Social.framework in Frameworks */,
 				C037820C18BF77C500FE4F13 /* libjsbindings iOS.a in Frameworks */,
 				1A676838180E9C1E0076BC67 /* libchipmunk iOS.a in Frameworks */,
 				1A676839180E9C1E0076BC67 /* libcocos2dx iOS.a in Frameworks */,
@@ -399,9 +457,107 @@
 			path = mac;
 			sourceTree = "<group>";
 		};
+		8E9369CB19D3C6B700460F03 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369CC19D3C6B700460F03 /* Social */,
+			);
+			name = Application;
+			path = ios/Application;
+			sourceTree = "<group>";
+		};
+		8E9369CC19D3C6B700460F03 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369CD19D3C6B700460F03 /* LineTool.h */,
+				8E9369CE19D3C6B700460F03 /* LineTool.m */,
+				8E9369CF19D3C6B700460F03 /* MailTool.h */,
+				8E9369D019D3C6B700460F03 /* MailTool.m */,
+				8E9369D119D3C6B700460F03 /* TwitterTool.h */,
+				8E9369D219D3C6B700460F03 /* TwitterTool.mm */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		8E9369DE19D3C81700460F03 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369DF19D3C81700460F03 /* common */,
+				8E9369E119D3C81700460F03 /* FieldAuth.cpp */,
+				8E9369E219D3C81700460F03 /* FieldAuth.h */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		8E9369DF19D3C81700460F03 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369E019D3C81700460F03 /* Singleton.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		8E9369E419D3C82500460F03 /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369E519D3C82500460F03 /* api */,
+				8E9369E719D3C82500460F03 /* Bridge.cpp */,
+				8E9369E819D3C82500460F03 /* Bridge.h */,
+				8E9369E919D3C82500460F03 /* config_Bridge.ini */,
+				8E9369EA19D3C82500460F03 /* jsb_bridge_auto.cpp */,
+				8E9369EB19D3C82500460F03 /* jsb_bridge_auto.hpp */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+		8E9369E519D3C82500460F03 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369E619D3C82500460F03 /* jsb_bridge_auto_api.js */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		8E9369F019D3C82E00460F03 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369F119D3C82E00460F03 /* sqlite */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		8E9369F119D3C82E00460F03 /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369F219D3C82E00460F03 /* sqlite3.c */,
+				8E9369F319D3C82E00460F03 /* sqlite3.h */,
+				8E9369F419D3C82E00460F03 /* sqlite3ext.h */,
+			);
+			path = sqlite;
+			sourceTree = "<group>";
+		};
+		8E9369F919D3C9A700460F03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E9369FD19D3C9A800460F03 /* libPluginProtocol.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E9369FF19D3C9DB00460F03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E936A0319D3C9DC00460F03 /* libPluginFacebook.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A92275321517C094001B78AA = {
 			isa = PBXGroup;
 			children = (
+				8E936A0619D3D62E00460F03 /* jsb_pluginx.js */,
+				8E9369FE19D3C9DB00460F03 /* PluginFacebook.xcodeproj */,
+				8E9369F819D3C9A700460F03 /* PluginProtocol.xcodeproj */,
 				C037820118BF76AF00FE4F13 /* cocos2d_js_bindings.xcodeproj */,
 				1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */,
 				BAF426FA19484B3E002B22EF /* script */,
@@ -426,6 +582,9 @@
 		A92275401517C094001B78AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E9369F619D3C8A100460F03 /* MessageUI.framework */,
+				8E9369DC19D3C76C00460F03 /* FacebookSDK.framework */,
+				8E9369DA19D3C70500460F03 /* Social.framework */,
 				D6B061231803AB9F0077942B /* CoreMotion.framework */,
 				502380DB17EBB88200990C9B /* libcurl.dylib */,
 				509D4AEA17EBB82600697056 /* IOKit.framework */,
@@ -458,6 +617,7 @@
 		D45446CC156DE73F00887EB5 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				8E9369CB19D3C6B700460F03 /* Application */,
 				509D4AAB17EBB2AB00697056 /* AppController.h */,
 				509D4AAC17EBB2AB00697056 /* AppController.mm */,
 				509D4AAD17EBB2AB00697056 /* Default-568h@2x.png */,
@@ -476,6 +636,9 @@
 		D4545214156E28EF00887EB5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8E9369F019D3C82E00460F03 /* libs */,
+				8E9369E419D3C82500460F03 /* bindings */,
+				8E9369DE19D3C81700460F03 /* app */,
 				D4545215156E28EF00887EB5 /* AppDelegate.cpp */,
 				D4545216156E28EF00887EB5 /* AppDelegate.h */,
 			);
@@ -562,6 +725,14 @@
 					ProductGroup = 1AC6FB35180E9ACB004C840B /* Products */;
 					ProjectRef = 1AC6FB34180E9ACB004C840B /* cocos2d_libs.xcodeproj */;
 				},
+				{
+					ProductGroup = 8E9369FF19D3C9DB00460F03 /* Products */;
+					ProjectRef = 8E9369FE19D3C9DB00460F03 /* PluginFacebook.xcodeproj */;
+				},
+				{
+					ProductGroup = 8E9369F919D3C9A700460F03 /* Products */;
+					ProjectRef = 8E9369F819D3C9A700460F03 /* PluginProtocol.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -642,6 +813,20 @@
 			remoteRef = 1AC6FB5D180E9ACB004C840B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		8E9369FD19D3C9A800460F03 /* libPluginProtocol.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPluginProtocol.a;
+			remoteRef = 8E9369FC19D3C9A800460F03 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E936A0319D3C9DC00460F03 /* libPluginFacebook.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPluginFacebook.a;
+			remoteRef = 8E936A0219D3C9DC00460F03 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		C037820718BF76AF00FE4F13 /* libjsbindings Mac.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -676,6 +861,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E936A0719D3D62E00460F03 /* jsb_pluginx.js in Resources */,
 				BAF426FB19484B3E002B22EF /* script in Resources */,
 				1AE159EC18C9DF3600FCA372 /* project.json in Resources */,
 				1AD7E0A818C9DB93004817A6 /* main.js in Resources */,
@@ -683,6 +869,7 @@
 				5091731E17ECDF7A00D62437 /* Icon-80.png in Resources */,
 				5091731F17ECDF7A00D62437 /* Icon-100.png in Resources */,
 				509D4AC117EBB2AB00697056 /* Icon-72.png in Resources */,
+				8E9369EE19D3C82500460F03 /* config_Bridge.ini in Resources */,
 				509D4AC017EBB2AB00697056 /* Icon-57.png in Resources */,
 				5091731A17ECDF7A00D62437 /* Icon-29.png in Resources */,
 				C03780EB18BEE0E400FE4F13 /* src in Resources */,
@@ -693,6 +880,7 @@
 				509D4ABD17EBB2AB00697056 /* Default-568h@2x.png in Resources */,
 				509D4ABF17EBB2AB00697056 /* Default@2x.png in Resources */,
 				509D4AC217EBB2AB00697056 /* Icon-76.png in Resources */,
+				8E9369EC19D3C82500460F03 /* jsb_bridge_auto_api.js in Resources */,
 				5091731B17ECDF7A00D62437 /* Icon-40.png in Resources */,
 				5091731C17ECDF7A00D62437 /* Icon-50.png in Resources */,
 				509D4AC417EBB2AB00697056 /* Icon-120.png in Resources */,
@@ -716,10 +904,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9369D419D3C6B700460F03 /* MailTool.m in Sources */,
+				8E9369EF19D3C82500460F03 /* jsb_bridge_auto.cpp in Sources */,
+				8E9369D519D3C6B700460F03 /* TwitterTool.mm in Sources */,
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
+				8E9369ED19D3C82500460F03 /* Bridge.cpp in Sources */,
+				8E9369E319D3C81700460F03 /* FieldAuth.cpp in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
+				8E9369F519D3C82E00460F03 /* sqlite3.c in Sources */,
+				8E9369D319D3C6B700460F03 /* LineTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,6 +1076,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/hashimotodaisuke/Projects/Cocos2d/Cocos2dJsPtouch/frameworks/js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/sdk",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -897,7 +1096,7 @@
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/PluginFacebook $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/protocols/platform/ios";
 			};
 			name = Debug;
 		};
@@ -907,6 +1106,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/hashimotodaisuke/Projects/Cocos2d/Cocos2dJsPtouch/frameworks/js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/sdk",
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -922,7 +1125,7 @@
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual";
+				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/PluginFacebook $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/protocols/platform/ios";
 			};
 			name = Release;
 		};

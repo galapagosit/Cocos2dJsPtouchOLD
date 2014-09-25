@@ -25,6 +25,23 @@
         {
             "from": "../../js-bindings/bindings/script",
             "to": "script"
+        },
+
+        {
+            "from": "../../js-bindings/cocos2d-x/plugin/jsbindings/script", 
+            "to": ""
+        },
+        {
+            "from": "../../js-bindings/cocos2d-x/plugin/protocols/proj.android/src", 
+            "to": "../src"
+        },
+        {
+            "from": "../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.android/src", 
+            "to": "../src"
+        },
+        {
+            "from": "../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.android/sdk", 
+            "to": "../libs"
         }
     ]
 }

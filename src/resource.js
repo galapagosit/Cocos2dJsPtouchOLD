@@ -1,7 +1,10 @@
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
-    CloseNormal_png : "res/CloseNormal.png",
-    CloseSelected_png : "res/CloseSelected.png"
+    UiIndex_json : "res/PtouchUi/index.json",
+    UiStage_json : "res/PtouchUi/stage.json",
+    UiField_json : "res/PtouchUi/field.json",
+    AnimationBear_json : "res/Animation/Animals/Bear/Bear.ExportJson",
+    AnimationPanda_json : "res/Animation/Animals/Panda/Panda.ExportJson",
+    Bear_mp3 : "res/sound/Animals/bear.mp3"
 };
 
 var g_resources = [];

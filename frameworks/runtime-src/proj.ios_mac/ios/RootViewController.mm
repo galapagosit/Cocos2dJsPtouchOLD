@@ -109,5 +109,58 @@
     [super dealloc];
 }
 
+// for MAIL start
+- (void)sendMail:(NSString*)title
+         message:(NSString*)message
+{
+    if ([MFMailComposeViewController canSendMail] == NO) {
+        [[[[UIAlertView alloc]
+                initWithTitle:@"エラー"
+                      message:@"メールアカウントを設定してください"
+                     delegate:nil
+            cancelButtonTitle:nil
+            otherButtonTitles:nil] autorelease] show];
+        return;
+    } else {
+        MFMailComposeViewController* controller =
+            [[[MFMailComposeViewController alloc] init] autorelease];
+
+        [controller setSubject:title];
+        [controller setMessageBody:message isHTML:NO];
+        controller.mailComposeDelegate = self;
+
+        [self presentModalViewController:controller animated:YES];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error
+{
+    if (error != nil) {
+        NSLog(@"エラーが発生しました。");
+    } else {
+        switch (result) {
+        case MFMailComposeResultSent:
+            NSLog(@"メールを送信");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"メールを保存");
+            break;
+        case MFMailComposeResultCancelled:
+            NSLog(@"キャンセル");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"失敗");
+            break;
+        default:
+            NSLog(@"不明な結果");
+            break;
+        }
+    }
+    [controller dismissModalViewControllerAnimated:YES];
+    return;
+}
+// for MAIL end
 
 @end

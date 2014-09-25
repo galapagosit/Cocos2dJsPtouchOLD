@@ -24,10 +24,15 @@
  ****************************************************************************/
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 
-@interface RootViewController : UIViewController {
+@interface RootViewController : UIViewController <MFMailComposeViewControllerDelegate>{
 
 }
 - (BOOL)prefersStatusBarHidden;
+// for MAIL start
+- (void)sendMail:(NSString *)title
+         message:(NSString *)message;
+// for MAIL end
 @end

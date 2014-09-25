@@ -24,12 +24,19 @@
  ****************************************************************************/
 
 #import <UIKit/UIKit.h>
+
+// for FACEBOOK SDK start
+#import <FacebookSDK/FacebookSDK.h>
+// for FACEBOOK SDK end
+
 #import "cocos2d.h"
 
 #import "AppController.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "CCEAGLView.h"
+#import "ShareFacebook.h"
+#import "UserFacebook.h"
 
 @implementation AppController
 
@@ -43,7 +50,14 @@ static AppDelegate s_sharedApplication;
 {
 
     // Override point for customization after application launch.
-
+    
+    // for FACEBOOK SDK start
+    // 何故かこれをするとlinkエラーが出ない
+    NSLog(@"preload ShareFacebook UserFacebook");
+    ShareFacebook *fb = [[ShareFacebook alloc] init];
+    UserFacebook *uf = [[UserFacebook alloc] init];
+    // for FACEBOOK SDK end
+    
     // Add the view controller's view to the window and display.
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [window bounds]
@@ -98,6 +112,9 @@ static AppDelegate s_sharedApplication;
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    // for FACEBOOK SDK start
+    [FBAppCall handleDidBecomeActive];
+    // for FACEBOOK SDK end
     cocos2d::Director::getInstance()->resume();
 }
 
@@ -139,6 +156,12 @@ static AppDelegate s_sharedApplication;
     [super dealloc];
 }
 
+// for FACEBOOK SDK start
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [FBSession.activeSession handleOpenURL:url];
+}
+// for FACEBOOK SDK end
 
 @end
 

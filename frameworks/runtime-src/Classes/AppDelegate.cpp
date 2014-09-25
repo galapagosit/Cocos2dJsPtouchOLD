@@ -25,6 +25,16 @@
 #include "platform/ios/JavaScriptObjCBridge.h"
 #endif
 
+// for FACEBOOK SDK start
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "jsb_cocos2dx_pluginx_auto.hpp"
+#include "jsb_pluginx_extension_registration.h"
+#endif
+// for FACEBOOK SDK end
+
+// for jsb
+#include "bindings/jsb_bridge_auto.hpp"
+
 USING_NS_CC;
 using namespace CocosDenshion;
 
@@ -79,7 +89,18 @@ bool AppDelegate::applicationDidFinishLaunching()
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
     sc->addRegisterCallback(JavaScriptObjCBridge::_js_register);
 #endif
-    sc->start();    
+
+// for FACEBOOK SDK start
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    sc->addRegisterCallback(register_all_pluginx_protocols);
+    sc->addRegisterCallback(register_pluginx_js_extensions);
+#endif
+// for FACEBOOK SDK end
+    
+    // for jsb
+    sc->addRegisterCallback(register_all_jsb_bridge_auto);
+    
+    sc->start();
     sc->runScript("script/jsb_boot.js");
     ScriptEngineProtocol *engine = ScriptingCore::getInstance();
 	ScriptEngineManager::getInstance()->setScriptEngine(engine);
