@@ -33,6 +33,9 @@ public:
     void exec_sql(char *sql);
     void createTable();
     void initData();
+    
+    bool canEnterField(const char *field_name);
+    void enableEnterField(const char *field_name);
 };
 
 #endif // _FIELD_AUTH_H_

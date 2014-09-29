@@ -39,6 +39,24 @@ static bool js_is_native_obj(JSContext *cx, JS::HandleObject obj, JS::HandleId i
 JSClass  *jsb_Bridge_class;
 JSObject *jsb_Bridge_prototype;
 
+bool js_jsb_bridge_auto_Bridge_fieldAuthCanEnterField(JSContext *cx, uint32_t argc, jsval *vp)
+{
+	jsval *argv = JS_ARGV(cx, vp);
+	bool ok = true;
+	if (argc == 1) {
+		const char* arg0;
+		std::string arg0_tmp; ok &= jsval_to_std_string(cx, argv[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
+		JSB_PRECONDITION2(ok, cx, false, "js_jsb_bridge_auto_Bridge_fieldAuthCanEnterField : Error processing arguments");
+		bool ret = Bridge::fieldAuthCanEnterField(arg0);
+		jsval jsret = JSVAL_NULL;
+		jsret = BOOLEAN_TO_JSVAL(ret);
+		JS_SET_RVAL(cx, vp, jsret);
+		return true;
+	}
+	JS_ReportError(cx, "js_jsb_bridge_auto_Bridge_fieldAuthCanEnterField : wrong number of arguments");
+	return false;
+}
+
 bool js_jsb_bridge_auto_Bridge_actionManagerExPlayActionByName(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
@@ -54,6 +72,22 @@ bool js_jsb_bridge_auto_Bridge_actionManagerExPlayActionByName(JSContext *cx, ui
 		return true;
 	}
 	JS_ReportError(cx, "js_jsb_bridge_auto_Bridge_actionManagerExPlayActionByName : wrong number of arguments");
+	return false;
+}
+
+bool js_jsb_bridge_auto_Bridge_fieldAuthEnableEnterField(JSContext *cx, uint32_t argc, jsval *vp)
+{
+	jsval *argv = JS_ARGV(cx, vp);
+	bool ok = true;
+	if (argc == 1) {
+		const char* arg0;
+		std::string arg0_tmp; ok &= jsval_to_std_string(cx, argv[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
+		JSB_PRECONDITION2(ok, cx, false, "js_jsb_bridge_auto_Bridge_fieldAuthEnableEnterField : Error processing arguments");
+		Bridge::fieldAuthEnableEnterField(arg0);
+		JS_SET_RVAL(cx, vp, JSVAL_VOID);
+		return true;
+	}
+	JS_ReportError(cx, "js_jsb_bridge_auto_Bridge_fieldAuthEnableEnterField : wrong number of arguments");
 	return false;
 }
 
@@ -98,7 +132,9 @@ void js_register_jsb_bridge_auto_Bridge(JSContext *cx, JSObject *global) {
 	};
 
 	static JSFunctionSpec st_funcs[] = {
+		JS_FN("fieldAuthCanEnterField", js_jsb_bridge_auto_Bridge_fieldAuthCanEnterField, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FN("actionManagerExPlayActionByName", js_jsb_bridge_auto_Bridge_actionManagerExPlayActionByName, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+		JS_FN("fieldAuthEnableEnterField", js_jsb_bridge_auto_Bridge_fieldAuthEnableEnterField, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
 		JS_FS_END
 	};
 

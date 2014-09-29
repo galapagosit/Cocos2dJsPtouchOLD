@@ -11,6 +11,15 @@ var StageLayer = cc.Layer.extend({
         var button_stage_animal = ccui.helper.seekWidgetByName(root, "button_stage_animal");
         button_stage_animal.addTouchEventListener(this.buttonStageAnimalTouchEvent, this);
 
+        // フィールドに入れる、入れないのテスト
+        var can_enter = jsb.Bridge.fieldAuthCanEnterField("vegetable");
+        cc.log("can_enter:" + can_enter);
+
+        jsb.Bridge.fieldAuthEnableEnterField("vegetable");
+
+        var can_enter = jsb.Bridge.fieldAuthCanEnterField("vegetable");
+        cc.log("can_enter:" + can_enter);
+
         return true;
     },
     buttonStageAnimalTouchEvent: function (sender, type) {
