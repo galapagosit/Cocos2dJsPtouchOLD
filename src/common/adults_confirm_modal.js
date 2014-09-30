@@ -77,10 +77,19 @@ var AdultsConfirmModalController = cc.Class.extend({
             this.callback();
         }else{
             cc.log("not correct!!");
-            this.randomNumberStrConfirm = "";
-            var label_modal_number_confirm = ccui.helper.seekWidgetByName(this.modal_layer, "label_modal_number_confirm");
-            label_modal_number_confirm.setString((this.randomNumberStrConfirm + "----").slice(4));
+
+            // 左右に震えさせる処理
+            var actionBy = cc.moveBy(0.1, cc.p(20, 0));
+            var actionByBack = actionBy.reverse();
+            var seq = cc.sequence(actionBy, actionByBack, actionByBack, actionBy);
+            this.modal_layer.runAction(seq);
+            this.resetNumber();
         }
+    },
+    resetNumber: function () {
+        this.randomNumberStrConfirm = "";
+        var label_modal_number_confirm = ccui.helper.seekWidgetByName(this.modal_layer, "label_modal_number_confirm");
+        label_modal_number_confirm.setString("----");
     },
     appear: function () {
         // 親レイヤにモーダル用のレイヤを追加
@@ -88,6 +97,9 @@ var AdultsConfirmModalController = cc.Class.extend({
 
         // ランダム数値入力
         this.inputRandom();
+
+        // 数値の初期化
+        this.resetNumber();
 
         // フェードイン
         jsb.Bridge.actionManagerExPlayActionByName(res.UiAdultsConfirmModal_json, "fade_in");
