@@ -678,6 +678,7 @@
 				A92275391517C094001B78AA /* Sources */,
 				A922753A1517C094001B78AA /* Frameworks */,
 				A922753B1517C094001B78AA /* Resources */,
+				8EB2739319D94ECC0057B2C4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -889,6 +890,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8EB2739319D94ECC0057B2C4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh ${SRCROOT}/../../../script/touch_resource.sh";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		509D4A8017EBB24E00697056 /* Sources */ = {

@@ -13,6 +13,7 @@
     "jsList" : [
         "src/resource.js",
         "src/app.js",
+        "src/common/adults_confirm_modal.js",
         "src/common/touch_checker.js",
         "src/common/line_tool.js",
         "src/common/mail_tool.js",

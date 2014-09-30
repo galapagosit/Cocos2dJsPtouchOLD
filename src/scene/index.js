@@ -1,14 +1,15 @@
 
 var IndexLayer = cc.Layer.extend({
     root: null,
+    adults_confirm_modal_controller: null,
     ctor:function () {
         this._super();
 
         // UIの初期化
         this.root = ccs.uiReader.widgetFromJsonFile(res.UiIndex_json);
         this.addChild(this.root);
-        //cc.eventManager.addEventListenerWithSceneGraphPriority(create_test_listener(true, true), this.root);
 
+        // ボタン制御
         var button_start = ccui.helper.seekWidgetByName(this.root, "button_start");
         button_start.addTouchEventListener(this.buttonStartTouchEvent, this);
 
@@ -33,8 +34,9 @@ var IndexLayer = cc.Layer.extend({
         var button_menu = ccui.helper.seekWidgetByName(this.root, "button_menu");
         button_menu.addTouchEventListener(this.buttonMenuTouchEvent, this);
 
-        var button_modal_close = ccui.helper.seekWidgetByName(this.root, "button_modal_close");
-        button_modal_close.addTouchEventListener(this.buttonModalCloseTouchEvent, this);
+        // おやこ確認用モーダルレイヤ
+        this.adults_confirm_modal_controller = new AdultsConfirmModalController();
+        this.adults_confirm_modal_controller.init(this.root, this.goMenuScene);
 
         return true;
     },
@@ -106,17 +108,12 @@ var IndexLayer = cc.Layer.extend({
         switch (type) {
         case ccui.Widget.TOUCH_ENDED:
             cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
-            jsb.Bridge.actionManagerExPlayActionByName(res.UiIndex_json, "modal_in");
+            this.adults_confirm_modal_controller.appear();
             break;
         }
     },
-    buttonModalCloseTouchEvent: function (sender, type) {
-        switch (type) {
-        case ccui.Widget.TOUCH_ENDED:
-            cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
-            jsb.Bridge.actionManagerExPlayActionByName(res.UiIndex_json, "modal_out");
-            break;
-        }
+    goMenuScene: function () {
+        cc.director.runScene(new cc.TransitionFade(0.5, new MenuScene()));
     }
 });
 

@@ -1,7 +1,9 @@
 #!/bin/sh
 
+DIR=`dirname ${0}`
+
 touch -cm main.js \;
 touch -cm project.json \;
-find ./src -exec touch -cm {} \;
-find ./res -exec touch -cm {} \;
+find $DIR/../src -exec touch -cm {} \;
+find $DIR/../res -exec touch -cm {} \;
 
