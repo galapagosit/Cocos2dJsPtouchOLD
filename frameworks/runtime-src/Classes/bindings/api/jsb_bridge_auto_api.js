@@ -9,15 +9,19 @@ var jsb = jsb || {};
 jsb.Bridge = {
 
 /**
- * @method fieldAuthCanEnterField
+ * @method actionManagerExPlayActionByNameWithCallback
  * @param {char} arg0
- * @return {bool}
+ * @param {char} arg1
+ * @param {long} arg2
+ * @param {String} arg3
  */
-fieldAuthCanEnterField : function (
-char 
+actionManagerExPlayActionByNameWithCallback : function (
+char, 
+char, 
+long, 
+str 
 )
 {
-    return false;
 },
 
 /**
@@ -40,6 +44,18 @@ fieldAuthEnableEnterField : function (
 char 
 )
 {
+},
+
+/**
+ * @method fieldAuthCanEnterField
+ * @param {char} arg0
+ * @return {bool}
+ */
+fieldAuthCanEnterField : function (
+char 
+)
+{
+    return false;
 },
 
 };
