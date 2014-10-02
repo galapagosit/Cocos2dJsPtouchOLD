@@ -7,12 +7,17 @@ var AdultsConfirmModalController = cc.Class.extend({
     randomNumberStr: null,
     randomNumberStrConfirm: "",
 
+    num_sprites: [],
+
     init:function (root, callback) {
         this.root = root;
         this.callback = callback;
         this.modal_layer = ccs.uiReader.widgetFromJsonFile(res.UiAdultsConfirmModal_json);
         // これしないとInvalid Native Object
         this.modal_layer.retain();
+
+        // 隠しておく
+        CommonUtil.hide_children(this.modal_layer);
 
         // ボタン制御
         var button_modal_close = ccui.helper.seekWidgetByName(this.modal_layer, "button_modal_close");
@@ -44,8 +49,18 @@ var AdultsConfirmModalController = cc.Class.extend({
         this.randomNumberStr = ("0000" + randomNumber.toString()).slice(-4);
         cc.log(this.randomNumberStr);
 
-        var label_modal_number = ccui.helper.seekWidgetByName(this.modal_layer, "label_modal_number");
-        label_modal_number.setString(this.randomNumberStr);
+        // スプライトを４つ配置
+        while (sp = this.num_sprites.pop()){
+            sp.removeFromParent(true);
+        }
+        _.each(this.randomNumberStr.split(''), function(element, index, array) {
+            cc.log(element);
+            var num_sprite = new cc.Sprite("res/PtouchUi/05_PassDialog/master_num_0" + element + ".png");
+            num_sprite.x = 565 + index * 105;
+            num_sprite.y = 485;
+            this.modal_layer.addChild(num_sprite, 125, "num_tag");
+            this.num_sprites.push(num_sprite);
+        }, this);
     },
     buttonModalCloseTouchEvent: function (sender, type) {
         switch (type) {
@@ -88,8 +103,8 @@ var AdultsConfirmModalController = cc.Class.extend({
     },
     resetNumber: function () {
         this.randomNumberStrConfirm = "";
-        var label_modal_number_confirm = ccui.helper.seekWidgetByName(this.modal_layer, "label_modal_number_confirm");
-        label_modal_number_confirm.setString("----");
+        //var label_modal_number_confirm = ccui.helper.seekWidgetByName(this.modal_layer, "label_modal_number_confirm");
+        //label_modal_number_confirm.setString("----");
     },
     appear: function () {
         // 親レイヤにモーダル用のレイヤを追加
@@ -102,9 +117,11 @@ var AdultsConfirmModalController = cc.Class.extend({
         this.resetNumber();
 
         // フェードイン
-        ccs.actionManager.playActionByName(res.UiAdultsConfirmModal_json, "fade_in");
+        CommonUtil.fade_to_children(this.modal_layer, 0.5, 255);
     },
     disappear: function () {
+        // 隠しておく
+        CommonUtil.hide_children(this.modal_layer);
         this.root.removeChild(this.modal_layer, true);
     }
 });

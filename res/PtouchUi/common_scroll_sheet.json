@@ -22,13 +22,18 @@
                 "colorr": 255,
                 "frameid": 0,
                 "opacity": 255,
-                "positionx": -4.29153442E-06,
+                "positionx": 0,
                 "positiony": -720,
                 "rotation": 0,
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 0,
-                "tweenParameter": [],
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
                 "tweenType": 0,
                 "visible": false
               },
@@ -46,7 +51,12 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 0,
-                "tweenParameter": [],
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
                 "tweenType": 0,
                 "visible": false
               }
@@ -79,7 +89,12 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 0,
-                "tweenParameter": [],
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
                 "tweenType": 0,
                 "visible": false
               },
@@ -97,7 +112,12 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 0,
-                "tweenParameter": [],
+                "tweenParameter": [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
                 "tweenType": 0,
                 "visible": false
               }
@@ -114,7 +134,7 @@
   "designWidth": 1280,
   "textures": [],
   "texturesPng": [
-    "background/index.jpg",
+    "background/index.png",
     "button.png",
     "background/stage.jpg",
     "button.png",
@@ -123,9 +143,18 @@
     "button.png",
     "button.png",
     "close.png",
-    "close.png",
-    "modal_frame.png",
-    "button.png",
+    "05_PassDialog/btn_close.png",
+    "05_PassDialog/btn_num_00.png",
+    "05_PassDialog/btn_num_01.png",
+    "05_PassDialog/btn_num_02.png",
+    "05_PassDialog/btn_num_03.png",
+    "05_PassDialog/btn_num_04.png",
+    "05_PassDialog/btn_num_05.png",
+    "05_PassDialog/btn_num_06.png",
+    "05_PassDialog/btn_num_07.png",
+    "05_PassDialog/btn_num_08.png",
+    "05_PassDialog/btn_num_09.png",
+    "05_PassDialog/base_dialog.png",
     "close.png"
   ],
   "version": "1.6.0.0",
@@ -402,7 +431,7 @@
               "ignoreSize": true,
               "layoutParameter": null,
               "opacity": 255,
-              "positionPercentX": 0.4999999,
+              "positionPercentX": 0.499218762,
               "positionPercentY": 0.7222222,
               "positionType": 0,
               "rotation": 0,
@@ -449,8 +478,8 @@
           "ignoreSize": false,
           "layoutParameter": null,
           "opacity": 255,
-          "positionPercentX": -3.35276118E-09,
-          "positionPercentY": 0,
+          "positionPercentX": 0,
+          "positionPercentY": -1,
           "positionType": 0,
           "rotation": 0,
           "scaleX": 1,
@@ -496,7 +525,7 @@
       "classname": "Panel",
       "name": "common_scroll_sheet_root",
       "ZOrder": 100,
-      "actiontag": 15547827,
+      "actiontag": -1,
       "anchorPointX": 0,
       "anchorPointY": 0,
       "classType": "CocoStudio.EngineAdapterWrap.CSPanel",

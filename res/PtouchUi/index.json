@@ -134,7 +134,7 @@
   "designWidth": 1280,
   "textures": [],
   "texturesPng": [
-    "background/index.jpg",
+    "background/index.png",
     "button.png"
   ],
   "version": "1.6.0.0",
@@ -187,7 +187,7 @@
           "capInsetsY": 0,
           "fileName": null,
           "fileNameData": {
-            "path": "background/index.jpg",
+            "path": "background/index.png",
             "plistFile": "",
             "resourceType": 0
           },
