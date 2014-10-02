@@ -28,7 +28,7 @@ var CommonScrollSheetController = cc.Class.extend({
         ccs.actionManager.playActionByName(res.UiCommonScrollSheet_json, "sheet_in");
     },
     disappear: function () {
-        ccs.actionManager.playActionByNameWithCallback(res.UiCommonScrollSheet_json, "sheet_out", this, "sheetOutCallback");
+        //ccs.actionManager.playActionByNameWithCallback(res.UiCommonScrollSheet_json, "sheet_out", this, "sheetOutCallback");
         jsb.Bridge.actionManagerExPlayActionByNameWithCallback(res.UiCommonScrollSheet_json, "sheet_out", this, "sheetOutCallback");
     },
     sheetOutCallback: function () {
