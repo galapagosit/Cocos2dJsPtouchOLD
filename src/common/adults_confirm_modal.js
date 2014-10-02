@@ -102,7 +102,7 @@ var AdultsConfirmModalController = cc.Class.extend({
         this.resetNumber();
 
         // フェードイン
-        jsb.Bridge.actionManagerExPlayActionByName(res.UiAdultsConfirmModal_json, "fade_in");
+        ccs.actionManager.playActionByName(res.UiAdultsConfirmModal_json, "fade_in");
     },
     disappear: function () {
         this.root.removeChild(this.modal_layer, true);

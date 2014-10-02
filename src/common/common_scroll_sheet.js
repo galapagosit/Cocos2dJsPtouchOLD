@@ -25,9 +25,10 @@ var CommonScrollSheetController = cc.Class.extend({
         // 親レイヤにモーダル用のレイヤを追加
         this.root.addChild(this.modal_layer);
 
-        jsb.Bridge.actionManagerExPlayActionByName(res.UiCommonScrollSheet_json, "sheet_in");
+        ccs.actionManager.playActionByName(res.UiCommonScrollSheet_json, "sheet_in");
     },
     disappear: function () {
+        ccs.actionManager.playActionByNameWithCallback(res.UiCommonScrollSheet_json, "sheet_out", this, "sheetOutCallback");
         jsb.Bridge.actionManagerExPlayActionByNameWithCallback(res.UiCommonScrollSheet_json, "sheet_out", this, "sheetOutCallback");
     },
     sheetOutCallback: function () {

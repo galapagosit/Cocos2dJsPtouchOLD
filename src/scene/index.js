@@ -52,7 +52,7 @@ var IndexLayer = cc.Layer.extend({
         switch (type) {
         case ccui.Widget.TOUCH_ENDED:
             cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
-            jsb.Bridge.actionManagerExPlayActionByName(res.UiIndex_json, "invite_in");
+            ccs.actionManager.playActionByName(res.UiIndex_json, "invite_in");
             break;
         }
     },
@@ -60,7 +60,7 @@ var IndexLayer = cc.Layer.extend({
         switch (type) {
         case ccui.Widget.TOUCH_ENDED:
             cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
-            jsb.Bridge.actionManagerExPlayActionByName(res.UiIndex_json, "invite_out");
+            ccs.actionManager.playActionByName(res.UiIndex_json, "invite_out");
             break;
         }
     },
