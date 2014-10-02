@@ -58,7 +58,7 @@ var AdultsConfirmModalController = cc.Class.extend({
             var num_sprite = new cc.Sprite("res/PtouchUi/05_PassDialog/master_num_0" + element + ".png");
             num_sprite.x = 565 + index * 105;
             num_sprite.y = 485;
-            this.modal_layer.addChild(num_sprite, 125, "num_tag");
+            this.modal_layer.addChild(num_sprite, 125, "num_splite_" + index);
             this.num_sprites.push(num_sprite);
         }, this);
     },
@@ -103,8 +103,8 @@ var AdultsConfirmModalController = cc.Class.extend({
     },
     resetNumber: function () {
         this.randomNumberStrConfirm = "";
-        //var label_modal_number_confirm = ccui.helper.seekWidgetByName(this.modal_layer, "label_modal_number_confirm");
-        //label_modal_number_confirm.setString("----");
+        var label_modal_number_confirm = ccui.helper.seekWidgetByName(this.modal_layer, "label_modal_number_confirm");
+        label_modal_number_confirm.setString("----");
     },
     appear: function () {
         // 親レイヤにモーダル用のレイヤを追加
