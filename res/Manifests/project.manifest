@@ -1,0 +1,189 @@
+{
+  "assets": {
+    "res/.DS_Store": {
+      "md5": "85a17fb2c6e5cce16de6b03572efc620"
+    }, 
+    "res/Animation/.DS_Store": {
+      "md5": "e6a04a732ffa725147d875fce85e0f67"
+    }, 
+    "res/Animation/Animals/.DS_Store": {
+      "md5": "9a578043e4fb4c253fa5ece2b14bf774"
+    }, 
+    "res/Animation/Animals/Bear/Bear.ExportJson": {
+      "md5": "2daff8cf8354735953a593380acac7e2"
+    }, 
+    "res/Animation/Animals/Bear/Bear0.plist": {
+      "md5": "c0f3dff04c6af6791467d130e8593f6d"
+    }, 
+    "res/Animation/Animals/Bear/Bear0.png": {
+      "md5": "b8fbbd1f046c3f382cf029cc6da07070"
+    }, 
+    "res/Animation/Animals/Panda/Panda.ExportJson": {
+      "md5": "b48b8cbf45d9c6da16e4f2c7fa7c10f8"
+    }, 
+    "res/Animation/Animals/Panda/Panda0.plist": {
+      "md5": "63de8303273b86b61566f30979019dee"
+    }, 
+    "res/Animation/Animals/Panda/Panda0.png": {
+      "md5": "66206423807f6f484aadf7ac1dafd6e9"
+    }, 
+    "res/CloseNormal.png": {
+      "md5": "ab2f75413050168141fb0bab64e3e248"
+    }, 
+    "res/CloseSelected.png": {
+      "md5": "3bb221ad5ce27057c62cde15fc13444f"
+    }, 
+    "res/HelloWorld.png": {
+      "md5": "452f2a82211497c828476cef1fe84bf6"
+    }, 
+    "res/Manifests/project.manifest": {
+      "md5": "5f683954a7277b21bab8ed55edb0bb99"
+    }, 
+    "res/Manifests/version.manifest": {
+      "md5": "fd261f4a20922d7ae3dc2533dbcb0d15"
+    }, 
+    "res/PtouchUi/05_PassDialog/base_dialog.png": {
+      "md5": "a3ac22f4513e10623a83d488cbcf3db3"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_close.png": {
+      "md5": "40b9c99f90053f96ab8cf02b0fa5866e"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_00.png": {
+      "md5": "c2e4ecfefffa25d4093c4c48d96fed64"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_01.png": {
+      "md5": "25f6626b3c2ddd604d688a7c5eafa674"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_02.png": {
+      "md5": "8cc4cae3ecd45d5b97697eb17b5a7e4e"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_03.png": {
+      "md5": "98ead4826557b518c300e496f9820d32"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_04.png": {
+      "md5": "461e21379f6e18297cba0ffd6cbd385c"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_05.png": {
+      "md5": "b9310f389828f2eb39261c5f4a85589a"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_06.png": {
+      "md5": "94ac6ac36399982e788faf3afd87018e"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_07.png": {
+      "md5": "644e25a6e16f8b15745c433c10fb46a8"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_08.png": {
+      "md5": "6349f379863542d1224718ab2214897d"
+    }, 
+    "res/PtouchUi/05_PassDialog/btn_num_09.png": {
+      "md5": "1daf20c555d9ffeca8b545694f1a20bf"
+    }, 
+    "res/PtouchUi/05_PassDialog/main_image.png": {
+      "md5": "4bdd88d0f459de317e179fb146c61c7e"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_00.png": {
+      "md5": "46a83c081eede97efddf49a51e8954d2"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_01.png": {
+      "md5": "67c5aac64bef2a2f358b19bb2da4cce3"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_02.png": {
+      "md5": "627f630a7db8172fce976d9d7d8c922f"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_03.png": {
+      "md5": "e843192cfdd4f8ccde56674c8be4b784"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_04.png": {
+      "md5": "ef1ed26913751d557723f8283d98241f"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_05.png": {
+      "md5": "76f4598790680c553f95a6f49cb14b70"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_06.png": {
+      "md5": "e5a4ee88e9a667a6cea9b275f37c5bf4"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_07.png": {
+      "md5": "6aeca64252dce90f0fa8b1daa1b30944"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_08.png": {
+      "md5": "97a0878c581327fd157f1b474b2dea44"
+    }, 
+    "res/PtouchUi/05_PassDialog/master_num_09.png": {
+      "md5": "96969fcd8b2142451451246e5e8f23e0"
+    }, 
+    "res/PtouchUi/10_InfoDialog/.DS_Store": {
+      "md5": "194577a7e20bdcc7afbb718f502c134c"
+    }, 
+    "res/PtouchUi/10_InfoDialog/base_dialog.png": {
+      "md5": "4cc38240e307b1260e4f512ab4a84fc1"
+    }, 
+    "res/PtouchUi/10_InfoDialog/btn_close.png": {
+      "md5": "4da55817b8baeb72e043b9a1ae665eb1"
+    }, 
+    "res/PtouchUi/10_InfoDialog/btn_pu_close.png": {
+      "md5": "40b9c99f90053f96ab8cf02b0fa5866e"
+    }, 
+    "res/PtouchUi/10_InfoDialog/main_image.png": {
+      "md5": "64859ae4369b5880b4e6ae18e2d37094"
+    }, 
+    "res/PtouchUi/adults_confirm_modal.json": {
+      "md5": "c7d70390ae07fcb73448c45114ef1946"
+    }, 
+    "res/PtouchUi/background/field.jpg": {
+      "md5": "cd2b7e2d10ebe77448ecd566f4e18145"
+    }, 
+    "res/PtouchUi/background/index.png": {
+      "md5": "36ec90eddcc49aac48ade4eea29dd8b0"
+    }, 
+    "res/PtouchUi/background/stage.jpg": {
+      "md5": "f66d324b085ff1261e4903ea63c7ec26"
+    }, 
+    "res/PtouchUi/button.png": {
+      "md5": "4b52c32160431a648add8ea6fc086062"
+    }, 
+    "res/PtouchUi/close.png": {
+      "md5": "1e80d930d0fb77d276db4919765b4f78"
+    }, 
+    "res/PtouchUi/common_scroll_sheet.json": {
+      "md5": "91cb05c9270e3d2549b3a4d1daff5138"
+    }, 
+    "res/PtouchUi/field.json": {
+      "md5": "bbbcf8c563dab72ad90d93e00921147f"
+    }, 
+    "res/PtouchUi/index.json": {
+      "md5": "89a9be617bf195261f61da97a7461ff0"
+    }, 
+    "res/PtouchUi/menu.json": {
+      "md5": "95f843d3c7680b806fa7071761559d59"
+    }, 
+    "res/PtouchUi/menu_frame.png": {
+      "md5": "f6ff2af2bb7a50100eb5040a66977a03"
+    }, 
+    "res/PtouchUi/modal_frame.png": {
+      "md5": "d9a4d20bf2465a647c0f8e51ca3cbb1c"
+    }, 
+    "res/PtouchUi/stage.json": {
+      "md5": "29a0ed090f4e54cc70afa9db50681937"
+    }, 
+    "res/PtouchUi/stage_animal.png": {
+      "md5": "bfde3e591fb04312f71a9a8abc4b3dde"
+    }, 
+    "res/favicon.ico": {
+      "md5": "53603b8cb29a0ab96620fa1e1b0df4bd"
+    }, 
+    "res/sound/.DS_Store": {
+      "md5": "194577a7e20bdcc7afbb718f502c134c"
+    }, 
+    "res/sound/Animals/bear.mp3": {
+      "md5": "5f07912ab46b1b1bd02c01d4a6a26f0c"
+    }, 
+    "src.zip": {
+      "md5": "b9d9b19b19703a2b6c6cca8ae22f5e9b"
+    }
+  }, 
+  "engineVersion": "3.0", 
+  "packageUrl": "http://128.199.166.94/static/", 
+  "remoteManifestUrl": "http://128.199.166.94/static/res/Manifests/project.manifest", 
+  "remoteVersionUrl": "http://128.199.166.94/static/res/Manifests/version.manifest", 
+  "version": "1.1.1"
+}

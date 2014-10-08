@@ -1,0 +1,19 @@
+var jsList = [ 
+    "src/resource.js",
+    "src/app.js",
+    "src/lib/underscore-min.js",
+    "src/common/utils.js",
+    "src/common/adults_confirm_modal.js",
+    "src/common/common_scroll_sheet.js",
+    "src/common/touch_checker.js",
+    "src/common/line_tool.js",
+    "src/common/mail_tool.js",
+    "src/common/facebook_tool.js",
+    "src/common/twitter_tool.js",
+    "src/scene/load_assets.js",
+    "src/scene/index.js",
+    "src/scene/menu.js",
+    "src/scene/stage.js",
+    "src/scene/field.js",
+    "src/scene/select_test.js"
+]
