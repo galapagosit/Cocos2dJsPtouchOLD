@@ -37,10 +37,10 @@
       "md5": "452f2a82211497c828476cef1fe84bf6"
     }, 
     "res/Manifests/project.manifest": {
-      "md5": "5f683954a7277b21bab8ed55edb0bb99"
+      "md5": "7d12b9ba364c3d1b1a1aeb8e24afeadf"
     }, 
     "res/Manifests/version.manifest": {
-      "md5": "fd261f4a20922d7ae3dc2533dbcb0d15"
+      "md5": "bc88e7dce20f5fa3a63497ca5e261e34"
     }, 
     "res/PtouchUi/05_PassDialog/base_dialog.png": {
       "md5": "a3ac22f4513e10623a83d488cbcf3db3"
@@ -178,12 +178,13 @@
       "md5": "5f07912ab46b1b1bd02c01d4a6a26f0c"
     }, 
     "src.zip": {
-      "md5": "b9d9b19b19703a2b6c6cca8ae22f5e9b"
+      "compressed": true, 
+      "md5": "85014554fe5bd703c82745d2d5a27e22"
     }
   }, 
   "engineVersion": "3.0", 
   "packageUrl": "http://128.199.166.94/static/", 
   "remoteManifestUrl": "http://128.199.166.94/static/res/Manifests/project.manifest", 
   "remoteVersionUrl": "http://128.199.166.94/static/res/Manifests/version.manifest", 
-  "version": "1.1.1"
+  "version": "1.0.0"
 }

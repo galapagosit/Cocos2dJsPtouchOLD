@@ -2,9 +2,9 @@
 # -*- coding:utf-8 -*-
 
 """
-organize assets dir
+create manifest file
 
-usage: script/put_assets.py (-v <version>)
+usage: script/create_manifest.py (-v <version>)
 
 options:
     -v version
@@ -19,8 +19,6 @@ import json
 from docopt import docopt
 
 
-# ファイル配信ディレクトリへのパス
-STATIC_ROOT = '/srv/static/'
 # ファイル配信URL
 STATIC_URL = 'http://128.199.166.94/static/'
 
@@ -101,44 +99,12 @@ def create_manifest(version):
         json.dump(manifest, f, sort_keys=True, indent=2)
 
 
-def clear_static_root():
-    """
-    ファイル配信ディレクトリを空に
-    """
-    if os.path.exists(STATIC_ROOT):
-        shutil.rmtree(STATIC_ROOT)
-    os.mkdir(STATIC_ROOT)
-
-def copy_assets():
-    """
-    通常ファイルをファイル配信ディレクトリにコピー
-    """
-    for assets_dir in ASSETS_DIRS:
-        dst_dir = os.path.join(STATIC_ROOT + assets_dir)
-        shutil.copytree(assets_dir, dst_dir)
-
-def copy_zip_assets():
-    """
-    圧縮ファイルをファイル配信ディレクトリにコピー
-    """
-    for z_dir in ZIP_ASSETS_DIRS:
-        z_path = z_dir + '.zip'
-        dst_path = os.path.join(STATIC_ROOT + z_path)
-        shutil.copy(z_path, dst_path)
-
-
 def main(version):
     zip_assets()
-
     create_manifest(version)
-
-    clear_static_root()
-    copy_assets()
-    copy_zip_assets()
 
 
 if __name__ == '__main__':
     args = docopt(__doc__)
     main(args['-v'])
-
 
