@@ -37,7 +37,7 @@
       "md5": "452f2a82211497c828476cef1fe84bf6"
     }, 
     "res/Manifests/project.manifest": {
-      "md5": "7d12b9ba364c3d1b1a1aeb8e24afeadf"
+      "md5": "7cb3219e52c40d9166fab09649149acc"
     }, 
     "res/Manifests/version.manifest": {
       "md5": "bc88e7dce20f5fa3a63497ca5e261e34"
@@ -179,7 +179,7 @@
     }, 
     "src.zip": {
       "compressed": true, 
-      "md5": "85014554fe5bd703c82745d2d5a27e22"
+      "md5": "9ff06f4f5acca0739279bebdd641525f"
     }
   }, 
   "engineVersion": "3.0", 
