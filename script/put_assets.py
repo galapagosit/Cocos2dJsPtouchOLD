@@ -102,7 +102,8 @@ def clear_static_root():
     """
     ファイル配信ディレクトリを空に
     """
-    shutil.rmtree(STATIC_ROOT)
+    if os.path.exists(STATIC_ROOT):
+        shutil.rmtree(STATIC_ROOT)
     os.mkdir(STATIC_ROOT)
 
 def copy_assets():
