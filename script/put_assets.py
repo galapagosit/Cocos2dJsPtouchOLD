@@ -80,7 +80,10 @@ def zip_assets_md5():
         z_path = z_dir + '.zip'
         with open(z_path, 'r') as f:
             byte = f.read()
-            assets_dic[z_path] = {'md5': hashlib.md5(byte).hexdigest()}
+            assets_dic[z_path] = {
+                'md5': hashlib.md5(byte).hexdigest(),
+                'compressed': True
+            }
     return assets_dic
 
 def create_manifest(version):
