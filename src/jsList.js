@@ -4,6 +4,7 @@ var jsList = [
     "src/lib/underscore-min.js",
     "src/common/utils.js",
     "src/common/adults_confirm_modal.js",
+    "src/common/info_modal.js",
     "src/common/common_scroll_sheet.js",
     "src/common/touch_checker.js",
     "src/common/line_tool.js",

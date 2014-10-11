@@ -2,23 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>PluginUser</key>
-	<string>UserFacebook</string>
-	<key>PluginShare</key>
-	<string>ShareFacebook</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb1545760462321569</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookDisplayName</key>
-	<string>Ptouch</string>
-	<key>FacebookAppID</key>
-	<string>1545760462321569</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
@@ -91,10 +74,31 @@
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1545760462321569</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>FacebookAppID</key>
+	<string>1545760462321569</string>
+	<key>FacebookDisplayName</key>
+	<string>Ptouch</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>PluginShare</key>
+	<string>ShareFacebook</string>
+	<key>PluginUser</key>
+	<string>UserFacebook</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>res/fonts/Abduction.ttf</string>
+	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

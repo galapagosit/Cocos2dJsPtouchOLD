@@ -51,10 +51,14 @@ cc.game.onStart = function(){
     cc.view.adjustViewPort(true);
     cc.view.setDesignResolutionSize(1280, 720, cc.ResolutionPolicy.SHOW_ALL);
     cc.view.resizeWithBrowserSize(true);
-    //load resources
-    cc.LoaderScene.preload([], function () {
-        //cc.director.runScene(new IndexScene());
-        cc.director.runScene(new LoadAssetsScene());
-    }, this);
+
+    //cc.LoaderScene.preload([], function () {
+    //    cc.director.runScene(new LoadAssetsScene());
+    //}, this);
+    cc.loader.loadJs(["src/jsList.js"], function(){
+        cc.loader.loadJs(jsList, function(){
+            cc.director.runScene(new IndexScene());
+        });
+    });
 };
 cc.game.run();

@@ -1,6 +1,7 @@
 
 var IndexLayer = cc.Layer.extend({
     root: null,
+    info_modal_controller: null,
     adults_confirm_modal_controller: null,
     ctor:function () {
         this._super();
@@ -33,6 +34,11 @@ var IndexLayer = cc.Layer.extend({
 
         var button_menu = ccui.helper.seekWidgetByName(this.root, "button_menu");
         button_menu.addTouchEventListener(this.buttonMenuTouchEvent, this);
+        
+        // 新着情報等
+        this.info_modal_controller = new InfoModalController();
+        this.info_modal_controller.init(this.root);
+        this.info_modal_controller.appear("こんにちは");
 
         // おやこ確認用モーダルレイヤ
         this.adults_confirm_modal_controller = new AdultsConfirmModalController();
