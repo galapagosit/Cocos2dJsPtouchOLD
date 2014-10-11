@@ -40,18 +40,25 @@ var InfoModalController = cc.Class.extend({
 
 
         // テキスト配置
-        var label;
+        var font_conf;
         if(cc.sys.OS_ANDROID === cc.sys.os){
-            label = cc.LabelTTF.create("Alignment 0\nnew line\n!!", "res/fonts/Abduction.ttf", 24);
+            font_conf = "res/fonts/Abduction.ttf";
         } else {
-            label = cc.LabelTTF.create("Alignment 0\nnew line\n!!", "Abduction", 24);
+            font_conf = "Abduction";
         }
-        cc.log(label);
-        this.modal_layer.addChild(label, 127, "label");
+
+        var label = cc.LabelTTF.create(
+                                    "aaa bbbbb kkkkk iiiii ooooo pppppjjjjjjjj\nnew line\nほげほげ!!\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line",
+                                    font_conf,
+                                    30,
+                                    cc.size(600, 320),
+                                    cc.TEXT_ALIGNMENT_LEFT);
+
         label.color = cc.color(0, 0, 0);
         label.x = 640;
-        label.y = 500;
+        label.y = 370;
         label.opacity = 255;
+        this.modal_layer.addChild(label, 127, "label");
     },
     disappear: function () {
         // 隠しておく
