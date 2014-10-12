@@ -71,8 +71,8 @@ var InfoModalController = cc.Class.extend({
         var scrollViewSize = scrollView.getContentSize();
 
         // 子要素として追加
-        scrollView.addChild(label, 127, "label_in_scrollView");
-        this.modal_layer.addChild(scrollView, 225, "scrollView");
+        scrollView.addChild(label);
+        this.modal_layer.addChild(scrollView, 130);
 
         //CommonUtil.dispAnchorPoint(scrollView, cc.color.RED);
         //CommonUtil.dispAnchorPoint(label, cc.color.BLUE);
