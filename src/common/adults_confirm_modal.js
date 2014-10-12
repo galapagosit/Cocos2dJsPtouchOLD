@@ -17,7 +17,7 @@ var AdultsConfirmModalController = cc.Class.extend({
         this.modal_layer.retain();
 
         // 隠しておく
-        CommonUtil.hide_children(this.modal_layer);
+        CommonUtil.hideChildren(this.modal_layer);
 
         // ボタン制御
         var button_modal_close = ccui.helper.seekWidgetByName(this.modal_layer, "button_modal_close");
@@ -117,11 +117,11 @@ var AdultsConfirmModalController = cc.Class.extend({
         this.resetNumber();
 
         // フェードイン
-        CommonUtil.fade_to_children(this.modal_layer, 0.5, 255);
+        CommonUtil.fadeToChildren(this.modal_layer, 0.5, 255);
     },
     disappear: function () {
         // 隠しておく
-        CommonUtil.hide_children(this.modal_layer);
+        CommonUtil.hideChildren(this.modal_layer);
         this.root.removeChild(this.modal_layer, true);
     }
 });

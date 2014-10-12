@@ -1,19 +1,30 @@
 
 var CommonUtil = {
-    hide_children:function (node) {
+    hideChildren:function (node) {
         cc.log(node.getName() + " >>> setOpacity");
         node.setOpacity(0);
         _.each(node.getChildren(), function(element, index, array) {
-              this.hide_children(element);
+              this.hideChildren(element);
         }, this);
     },
-    fade_to_children:function (node, duration, opacity) {
-        cc.log(node.getName() + " >>> fade_to_children");
+    fadeToChildren:function (node, duration, opacity) {
+        cc.log(node.getName() + " >>> fadeToChildren");
         var fade_action = cc.fadeTo(duration, opacity);
         node.runAction(fade_action);
         _.each(node.getChildren(), function(element, index, array) {
-              this.fade_to_children(element, duration, opacity);
+              this.fadeToChildren(element, duration, opacity);
         }, this);
+    },
+    dispAnchorPoint:function (node, color) {
+        var draw = new cc.DrawNode();
+        draw.drawDot(cc.p(0, 0), 5, color);
+        node.addChild(draw, node.getLocalZOrder() + 1);
+    },
+    dispContentSize:function (node, color) {
+        var layer = new cc.LayerColor(color);
+        layer.setContentSize(node.getContentSize());
+        layer.setOpacity(100);
+        node.addChild(layer, node.getLocalZOrder() + 1);
     }
 };
 

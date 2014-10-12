@@ -15,7 +15,7 @@ var InfoModalController = cc.Class.extend({
         this.modal_layer.retain();
 
         // 隠しておく
-        CommonUtil.hide_children(this.modal_layer);
+        CommonUtil.hideChildren(this.modal_layer);
 
         // ボタン制御
         var button_modal_close = ccui.helper.seekWidgetByName(this.modal_layer, "button_modal_close");
@@ -36,8 +36,7 @@ var InfoModalController = cc.Class.extend({
         // 親レイヤにモーダル用のレイヤを追加
         this.root.addChild(this.modal_layer);
         // フェードイン
-        CommonUtil.fade_to_children(this.modal_layer, 0.5, 255);
-
+        CommonUtil.fadeToChildren(this.modal_layer, 0.5, 255);
 
         // テキスト配置
         var font_conf;
@@ -48,21 +47,40 @@ var InfoModalController = cc.Class.extend({
         }
 
         var label = cc.LabelTTF.create(
-                                    "aaa bbbbb kkkkk iiiii ooooo pppppjjjjjjjj\nnew line\nほげほげ!!\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line",
+                                    "aaa bbbbb kkkkk iiiii ooooo pppppjjjjjjjj\nnew line\nほげほげ!!\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line\nnew line",
                                     font_conf,
-                                    30,
-                                    cc.size(600, 320),
-                                    cc.TEXT_ALIGNMENT_LEFT);
+                                    30);
 
+        // 折り返しのために幅だけ固定
+        label.setDimensions(cc.size(600, 0));
+        label.setHorizontalAlignment(cc.TEXT_ALIGNMENT_LEFT);
         label.color = cc.color(0, 0, 0);
-        label.x = 640;
-        label.y = 370;
-        label.opacity = 255;
-        this.modal_layer.addChild(label, 127, "label");
+        label.setAnchorPoint(0, 0);
+        var labelSize = label.getContentSize();
+
+        // Create the scrollview
+        var scrollView = new ccui.ScrollView();
+        scrollView.setTouchEnabled(true);
+        scrollView.setBounceEnabled(false);
+        scrollView.setBackGroundColor(cc.color.GREEN);
+        scrollView.setBackGroundColorType(ccui.Layout.BG_COLOR_SOLID);
+        scrollView.setDirection(ccui.ScrollView.DIR_VERTICAL);
+        scrollView.setContentSize(cc.size(600, 320));
+        scrollView.setInnerContainerSize(labelSize);
+        scrollView.setPosition(340, 225);
+        var scrollViewSize = scrollView.getContentSize();
+
+        // 子要素として追加
+        scrollView.addChild(label, 127, "label_in_scrollView");
+        this.modal_layer.addChild(scrollView, 225, "scrollView");
+
+        //CommonUtil.dispAnchorPoint(scrollView, cc.color.RED);
+        //CommonUtil.dispAnchorPoint(label, cc.color.BLUE);
+        //CommonUtil.dispContentSize(label, cc.color.BLUE);
     },
     disappear: function () {
         // 隠しておく
-        CommonUtil.hide_children(this.modal_layer);
+        CommonUtil.hideChildren(this.modal_layer);
         this.root.removeChild(this.modal_layer, true);
     }
 });
