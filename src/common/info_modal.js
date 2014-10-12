@@ -3,11 +3,6 @@ var InfoModalController = cc.Class.extend({
     root: null,
     modal_layer: null,
 
-    randomNumberStr: null,
-    randomNumberStrConfirm: "",
-
-    num_sprites: [],
-
     init:function (root) {
         this.root = root;
         this.modal_layer = ccs.uiReader.widgetFromJsonFile(res.UiInfoModal_json);
@@ -74,6 +69,8 @@ var InfoModalController = cc.Class.extend({
         scrollView.addChild(label);
         this.modal_layer.addChild(scrollView, 130);
 
+        scrollView.addEventListener(this.scrollviewEvent, this);
+
         //CommonUtil.dispAnchorPoint(scrollView, cc.color.RED);
         //CommonUtil.dispAnchorPoint(label, cc.color.BLUE);
         //CommonUtil.dispContentSize(label, cc.color.BLUE);
@@ -82,6 +79,18 @@ var InfoModalController = cc.Class.extend({
         // 隠しておく
         CommonUtil.hideChildren(this.modal_layer);
         this.root.removeChild(this.modal_layer, true);
+    },
+    scrollviewEvent: function (sender, type) {
+        switch (type) {
+            case ccui.ScrollView.EVENT_SCROLLING:
+                // はみ出す長さ
+                var h = sender.getInnerContainer().height - sender.getContentSize().height;
+                cc.log("scrolling(%)!!!" + (-sender.getInnerContainer().y / h * 100));
+
+                break;
+            default:
+                break;
+        }
     }
 });
 
