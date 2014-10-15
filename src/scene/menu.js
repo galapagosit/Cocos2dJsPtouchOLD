@@ -10,6 +10,9 @@ var MenuLayer = cc.Layer.extend({
         this.addChild(this.root);
 
         // ボタン制御
+        var button_index = ccui.helper.seekWidgetByName(this.root, "button_index");
+        button_index.addTouchEventListener(this.buttonIndexTouchEvent, this);
+
         var button_about_app = ccui.helper.seekWidgetByName(this.root, "button_about_app");
         button_about_app.addTouchEventListener(this.buttonAboutAppTouchEvent, this);
 
@@ -18,6 +21,14 @@ var MenuLayer = cc.Layer.extend({
         this.common_scroll_sheet_controller.init(this.root);
 
         return true;
+    },
+    buttonIndexTouchEvent: function (sender, type) {
+        switch (type) {
+        case ccui.Widget.TOUCH_ENDED:
+            cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
+            cc.director.runScene(new cc.TransitionFade(0.5, new IndexScene()));
+            break;
+        }
     },
     buttonAboutAppTouchEvent: function (sender, type) {
         switch (type) {

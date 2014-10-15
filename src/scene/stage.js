@@ -1,14 +1,18 @@
 
 var StageLayer = cc.Layer.extend({
+    root: null,
     ctor:function () {
         this._super();
 
         // UIの初期化
-        var root = ccs.uiReader.widgetFromJsonFile(res.UiStage_json);
-        this.addChild(root);
+        this.root = ccs.uiReader.widgetFromJsonFile(res.UiStage_json);
+        this.addChild(this.root);
 
         // ボタンのイベント登録
-        var button_stage_animal = ccui.helper.seekWidgetByName(root, "button_stage_animal");
+        var button_index = ccui.helper.seekWidgetByName(this.root, "button_index");
+        button_index.addTouchEventListener(this.buttonIndexTouchEvent, this);
+
+        var button_stage_animal = ccui.helper.seekWidgetByName(this.root, "button_stage_animal");
         button_stage_animal.addTouchEventListener(this.buttonStageAnimalTouchEvent, this);
 
         // フィールドに入れる、入れないのテスト
@@ -21,6 +25,14 @@ var StageLayer = cc.Layer.extend({
         cc.log("can_enter:" + can_enter);
 
         return true;
+    },
+    buttonIndexTouchEvent: function (sender, type) {
+        switch (type) {
+        case ccui.Widget.TOUCH_ENDED:
+            cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
+            cc.director.runScene(new cc.TransitionFade(0.5, new IndexScene()));
+            break;
+        }
     },
     buttonStageAnimalTouchEvent: function (sender, type) {
         switch (type) {
