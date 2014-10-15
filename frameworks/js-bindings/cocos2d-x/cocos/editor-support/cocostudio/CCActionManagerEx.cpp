@@ -74,6 +74,7 @@ void ActionManagerEx::initWithDictionary(const char* jsonName,const rapidjson::V
 		action->initWithDictionary(actionDic,root);
 		actionList.pushBack(action);
 	}
+	_actionDic.erase(fileName);
 	_actionDic.insert(std::pair<std::string, cocos2d::Vector<ActionObject*>>(fileName, actionList));
 }
     
@@ -109,6 +110,7 @@ void ActionManagerEx::initWithDictionary(const char* jsonName,const rapidjson::V
                 actionList.pushBack(action);
             }
         }
+        _actionDic.erase(fileName);
         _actionDic.insert(std::pair<std::string, cocos2d::Vector<ActionObject*>>(fileName, actionList));
         
     }
