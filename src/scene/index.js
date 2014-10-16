@@ -2,7 +2,7 @@
 var IndexLayer = cc.Layer.extend({
     root: null,
     info_modal_controller: null,
-    adults_confirm_modal_controller: null,
+    menu_adults_confirm_modal_controller: null,
     ctor:function () {
         this._super();
 
@@ -40,9 +40,13 @@ var IndexLayer = cc.Layer.extend({
         this.info_modal_controller.init(this.root);
         this.info_modal_controller.appear("こんにちは");
 
+        // 友達に教える
+        this.invite_adults_confirm_modal_controller = new AdultsConfirmModalController();
+        this.invite_adults_confirm_modal_controller.init(this.root, this.inviteIn);
+
         // おやこ確認用モーダルレイヤ
-        this.adults_confirm_modal_controller = new AdultsConfirmModalController();
-        this.adults_confirm_modal_controller.init(this.root, this.goMenuScene);
+        this.menu_adults_confirm_modal_controller = new AdultsConfirmModalController();
+        this.menu_adults_confirm_modal_controller.init(this.root, this.goMenuScene);
 
         return true;
     },
@@ -58,7 +62,7 @@ var IndexLayer = cc.Layer.extend({
         switch (type) {
         case ccui.Widget.TOUCH_ENDED:
             cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
-            ccs.actionManager.playActionByName(res.UiIndex_json, "invite_in");
+            this.invite_adults_confirm_modal_controller.appear();
             break;
         }
     },
@@ -114,9 +118,12 @@ var IndexLayer = cc.Layer.extend({
         switch (type) {
         case ccui.Widget.TOUCH_ENDED:
             cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
-            this.adults_confirm_modal_controller.appear();
+            this.menu_adults_confirm_modal_controller.appear();
             break;
         }
+    },
+    inviteIn: function () {
+        ccs.actionManager.playActionByName(res.UiIndex_json, "invite_in");
     },
     goMenuScene: function () {
         cc.director.runScene(new cc.TransitionFade(0.5, new MenuScene()));

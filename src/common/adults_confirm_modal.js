@@ -89,6 +89,9 @@ var AdultsConfirmModalController = cc.Class.extend({
     checkNumber: function () {
         if(this.randomNumberStr === this.randomNumberStrConfirm){
             cc.log("correct!!");
+            // 隠しておく
+            CommonUtil.hideChildren(this.modal_layer);
+            this.root.removeChild(this.modal_layer, true);
             this.callback();
         }else{
             cc.log("not correct!!");
