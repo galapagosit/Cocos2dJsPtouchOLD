@@ -1,14 +1,27 @@
 
 var FieldLayer = cc.Layer.extend({
+    root: null,
     ctor:function () {
         this._super();
 
         // UIの初期化
-        var root = ccs.uiReader.widgetFromJsonFile(res.UiField_json);
-        this.addChild(root);
+        this.root = ccs.uiReader.widgetFromJsonFile(res.UiField_json);
+        this.addChild(this.root);
+
+        // ボタンのイベント登録
+        var button_stage = ccui.helper.seekWidgetByName(this.root, "button_stage");
+        button_stage.addTouchEventListener(this.buttonStageTouchEvent, this);
 
         this.animate_animal();
         return true;
+    },
+    buttonStageTouchEvent: function (sender, type) {
+        switch (type) {
+        case ccui.Widget.TOUCH_ENDED:
+            cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
+            cc.director.runScene(new cc.TransitionFade(0.5, new StageScene()));
+            break;
+        }
     },
     animate_animal:function () {
         cc.log("animate_animal start!!!");
