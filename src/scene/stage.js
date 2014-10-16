@@ -39,7 +39,7 @@ var StageLayer = cc.Layer.extend({
         case ccui.Widget.TOUCH_ENDED:
             cc.log(sender.getName() + " >>> Touch Up");
             cc.LoaderScene.preload(g_resources, function () {
-                cc.director.runScene(new FieldScene());
+                cc.director.runScene(new FieldScene('animal'));
             }, this);
             break;
         default:

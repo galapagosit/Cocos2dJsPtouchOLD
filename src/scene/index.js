@@ -38,7 +38,7 @@ var IndexLayer = cc.Layer.extend({
         // 新着情報等
         this.info_modal_controller = new InfoModalController();
         this.info_modal_controller.init(this.root);
-        this.info_modal_controller.appear("こんにちは");
+        //this.info_modal_controller.appear("こんにちは");
 
         // 友達に教える
         this.invite_adults_confirm_modal_controller = new AdultsConfirmModalController();
