@@ -106,7 +106,7 @@ var FieldLayer = cc.Layer.extend({
     },
     moveToPage: function () {
         this.checkPageButton();
-        var move = cc.moveTo(0.5, cc.p((1 - this.page) * 1280, 0));
+        var move = cc.moveTo(0.7, cc.p((1 - this.page) * 1280, 0)).easing(cc.easeElasticOut());
         this.big_layer.runAction(move);
     },
     checkPageButton: function () {
