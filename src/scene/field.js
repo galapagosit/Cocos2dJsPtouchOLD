@@ -169,7 +169,7 @@ var FieldLayer = cc.Layer.extend({
 
             // サウンドの先読みをしておく
             // TODO もっと早い段階のほうが良いかも
-            cc.audioEngine.preloadMusic(touchObject.mp3File());
+            cc.audioEngine.preloadEffect(touchObject.mp3File());
 
             ccs.armatureDataManager.addArmatureFileInfo(touchObject.animatureJsonFile());
             var armature = ccs.Armature.create(touchObject.name);
