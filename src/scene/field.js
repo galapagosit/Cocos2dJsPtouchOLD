@@ -167,6 +167,10 @@ var FieldLayer = cc.Layer.extend({
         _.each(TOUCH_OBJECT_MAPS[this.category], function(element, index, array) {
             var touchObject = new TouchObject(element.name, element.x, element.y);
 
+            // サウンドの先読みをしておく
+            // TODO もっと早い段階のほうが良いかも
+            cc.audioEngine.preloadMusic(touchObject.mp3File());
+
             ccs.armatureDataManager.addArmatureFileInfo(touchObject.animatureJsonFile());
             var armature = ccs.Armature.create(touchObject.name);
 
