@@ -1,4 +1,7 @@
 
+var LanguageConfig = {
+    type: 'jp'
+}
 
 function TouchObject(name, x, y) {
     this.name = name;
@@ -15,6 +18,8 @@ function TouchObject(name, x, y) {
         return 'res/Animation/Animals/' + this.name + '/' + this.name + '.ExportJson';
     };
     this.mp3File = function() {
+        // 後で振り分け
+        cc.log(LanguageConfig.type);
         return 'res/sound/Animals/' + this.name + '.mp3';
     };
     this.onFrameEvent = function(bone, evt, originFrameIndex, currentFrameIndex) {
@@ -70,6 +75,23 @@ var FieldLayer = cc.Layer.extend({
 
         this.checkPageButton();
 
+        // スイッチ
+        var switchControl = new cc.ControlSwitch(
+            new cc.Sprite("res/switch/switch-mask.png"),
+            new cc.Sprite("res/switch/switch-on.png"),
+            new cc.Sprite("res/switch/switch-off.png"),
+            new cc.Sprite("res/switch/switch-thumb.png"),
+            new cc.LabelTTF("jp", "Arial-BoldMT", 16),
+            new cc.LabelTTF("en", "Arial-BoldMT", 16)
+        );
+        switchControl.x = 1080;
+        switchControl.y = 100;
+        this.root.addChild(switchControl);
+        switchControl.addTargetWithActionForControlEvents(this, this.switchValueChanged, cc.CONTROL_EVENT_VALUECHANGED);
+
+        // Update the value label
+        this.switchValueChanged(switchControl, cc.CONTROL_EVENT_VALUECHANGED);
+
         // コンテンツの配置
         this.setTouchObject();
 
@@ -122,6 +144,14 @@ var FieldLayer = cc.Layer.extend({
             button_scroll_right.setEnabled(false);
         }else{
             button_scroll_right.setEnabled(true);
+        }
+    },
+    switchValueChanged:function (sender, controlEvent) {
+        if (sender.isOn()) {
+            LanguageConfig.type = 'jp';
+        }
+        else {
+            LanguageConfig.type = 'en';
         }
     },
     buttonStageTouchEvent: function (sender, type) {
