@@ -34,6 +34,7 @@
 
 // for jsb
 #include "bindings/jsb_bridge_auto.hpp"
+#include "bindings/jsb_sqlite_bridge_auto.hpp"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -99,6 +100,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     // for jsb
     sc->addRegisterCallback(register_all_jsb_bridge_auto);
+    sc->addRegisterCallback(register_all_jsb_sqlite_bridge_auto);
     
     sc->start();
     sc->runScript("script/jsb_boot.js");

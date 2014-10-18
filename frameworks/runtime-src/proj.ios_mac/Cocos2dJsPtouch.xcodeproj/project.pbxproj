@@ -53,6 +53,10 @@
 		509D4AE717EBB81800697056 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AE617EBB81800697056 /* OpenGL.framework */; };
 		509D4AE917EBB82000697056 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AE817EBB82000697056 /* AppKit.framework */; };
 		509D4AEB17EBB82600697056 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509D4AEA17EBB82600697056 /* IOKit.framework */; };
+		8E424B3419F258EC00F7A682 /* SQLiteBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E424B3219F258EC00F7A682 /* SQLiteBridge.cpp */; };
+		8E424B3C19F258FC00F7A682 /* config_SQLiteBridge.ini in Resources */ = {isa = PBXBuildFile; fileRef = 8E424B3B19F258FC00F7A682 /* config_SQLiteBridge.ini */; };
+		8E424B3F19F2633C00F7A682 /* jsb_sqlite_bridge_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E424B3D19F2633C00F7A682 /* jsb_sqlite_bridge_auto.cpp */; };
+		8E424B4119F2634400F7A682 /* jsb_sqlite_bridge_auto_api.js in Resources */ = {isa = PBXBuildFile; fileRef = 8E424B4019F2634400F7A682 /* jsb_sqlite_bridge_auto_api.js */; };
 		8E9369D319D3C6B700460F03 /* LineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369CE19D3C6B700460F03 /* LineTool.m */; };
 		8E9369D419D3C6B700460F03 /* MailTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369D019D3C6B700460F03 /* MailTool.m */; };
 		8E9369D519D3C6B700460F03 /* TwitterTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369D219D3C6B700460F03 /* TwitterTool.mm */; };
@@ -298,6 +302,13 @@
 		509D4AE617EBB81800697056 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		509D4AE817EBB82000697056 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		509D4AEA17EBB82600697056 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		8E424B3219F258EC00F7A682 /* SQLiteBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SQLiteBridge.cpp; sourceTree = "<group>"; };
+		8E424B3319F258EC00F7A682 /* SQLiteBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteBridge.h; sourceTree = "<group>"; };
+		8E424B3B19F258FC00F7A682 /* config_SQLiteBridge.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config_SQLiteBridge.ini; sourceTree = "<group>"; };
+		8E424B3D19F2633C00F7A682 /* jsb_sqlite_bridge_auto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsb_sqlite_bridge_auto.cpp; sourceTree = "<group>"; };
+		8E424B3E19F2633C00F7A682 /* jsb_sqlite_bridge_auto.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsb_sqlite_bridge_auto.hpp; sourceTree = "<group>"; };
+		8E424B4019F2634400F7A682 /* jsb_sqlite_bridge_auto_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsb_sqlite_bridge_auto_api.js; sourceTree = "<group>"; };
+		8E424B4319F26A9A00F7A682 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		8E9369CD19D3C6B700460F03 /* LineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTool.h; sourceTree = "<group>"; };
 		8E9369CE19D3C6B700460F03 /* LineTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTool.m; sourceTree = "<group>"; };
 		8E9369CF19D3C6B700460F03 /* MailTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailTool.h; sourceTree = "<group>"; };
@@ -457,6 +468,14 @@
 			path = mac;
 			sourceTree = "<group>";
 		};
+		8E424B4219F26A9A00F7A682 /* picojson */ = {
+			isa = PBXGroup;
+			children = (
+				8E424B4319F26A9A00F7A682 /* picojson.h */,
+			);
+			path = picojson;
+			sourceTree = "<group>";
+		};
 		8E9369CB19D3C6B700460F03 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +522,11 @@
 				8E9369E519D3C82500460F03 /* api */,
 				8E9369E719D3C82500460F03 /* Bridge.cpp */,
 				8E9369E819D3C82500460F03 /* Bridge.h */,
+				8E424B3219F258EC00F7A682 /* SQLiteBridge.cpp */,
+				8E424B3B19F258FC00F7A682 /* config_SQLiteBridge.ini */,
+				8E424B3319F258EC00F7A682 /* SQLiteBridge.h */,
+				8E424B3D19F2633C00F7A682 /* jsb_sqlite_bridge_auto.cpp */,
+				8E424B3E19F2633C00F7A682 /* jsb_sqlite_bridge_auto.hpp */,
 				8E9369E919D3C82500460F03 /* config_Bridge.ini */,
 				8E9369EA19D3C82500460F03 /* jsb_bridge_auto.cpp */,
 				8E9369EB19D3C82500460F03 /* jsb_bridge_auto.hpp */,
@@ -513,6 +537,7 @@
 		8E9369E519D3C82500460F03 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				8E424B4019F2634400F7A682 /* jsb_sqlite_bridge_auto_api.js */,
 				8E9369E619D3C82500460F03 /* jsb_bridge_auto_api.js */,
 			);
 			path = api;
@@ -521,6 +546,7 @@
 		8E9369F019D3C82E00460F03 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				8E424B4219F26A9A00F7A682 /* picojson */,
 				8E9369F119D3C82E00460F03 /* sqlite */,
 			);
 			path = libs;
@@ -872,8 +898,10 @@
 				509D4AC117EBB2AB00697056 /* Icon-72.png in Resources */,
 				8E9369EE19D3C82500460F03 /* config_Bridge.ini in Resources */,
 				509D4AC017EBB2AB00697056 /* Icon-57.png in Resources */,
+				8E424B3C19F258FC00F7A682 /* config_SQLiteBridge.ini in Resources */,
 				5091731A17ECDF7A00D62437 /* Icon-29.png in Resources */,
 				C03780EB18BEE0E400FE4F13 /* src in Resources */,
+				8E424B4119F2634400F7A682 /* jsb_sqlite_bridge_auto_api.js in Resources */,
 				509D4AC617EBB2AB00697056 /* Icon-152.png in Resources */,
 				C0799CB918BAE62000E9C828 /* res in Resources */,
 				509D4AC517EBB2AB00697056 /* Icon-144.png in Resources */,
@@ -927,8 +955,10 @@
 				509D4AC917EBB2AB00697056 /* RootViewController.mm in Sources */,
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
 				8E9369ED19D3C82500460F03 /* Bridge.cpp in Sources */,
+				8E424B3F19F2633C00F7A682 /* jsb_sqlite_bridge_auto.cpp in Sources */,
 				8E9369E319D3C81700460F03 /* FieldAuth.cpp in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
+				8E424B3419F258EC00F7A682 /* SQLiteBridge.cpp in Sources */,
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,
 				8E9369F519D3C82E00460F03 /* sqlite3.c in Sources */,
 				8E9369D319D3C6B700460F03 /* LineTool.m in Sources */,

@@ -117,4 +117,5 @@ echo "Generating bindings for cocos2dx..."
 set -x
 
 
-LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${OUTPUT_DIR}/config_Bridge.ini -t spidermonkey -s Bridge -o ${OUTPUT_DIR}
+#LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${OUTPUT_DIR}/config_Bridge.ini -t spidermonkey -s Bridge -o ${OUTPUT_DIR}
+LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${OUTPUT_DIR}/config_SQLiteBridge.ini -t spidermonkey -s SQLiteBridge -o ${OUTPUT_DIR}
