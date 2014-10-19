@@ -10,33 +10,23 @@ jsb.SQLiteBridge = {
 
 /**
  * @method execSql
- * @param {char} arg0
- * @return {char}
+ * @param {String} arg0
+ * @return {String}
  */
 execSql : function (
-char 
+str 
 )
 {
-    return 0;
-},
-
-/**
- * @method getAccesser
- * @param {char} arg0
- * @return {SQLiteBridge}
- */
-getAccesser : function (
-char 
-)
-{
-    return SQLiteBridge;
+    return ;
 },
 
 /**
  * @method SQLiteBridge
  * @constructor
+ * @param {String} arg0
  */
 SQLiteBridge : function (
+str 
 )
 {
 },

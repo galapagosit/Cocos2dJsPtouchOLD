@@ -48,12 +48,12 @@ bool js_jsb_sqlite_bridge_auto_SQLiteBridge_execSql(JSContext *cx, uint32_t argc
 	SQLiteBridge* cobj = (SQLiteBridge *)(proxy ? proxy->ptr : NULL);
 	JSB_PRECONDITION2( cobj, cx, false, "js_jsb_sqlite_bridge_auto_SQLiteBridge_execSql : Invalid Native Object");
 	if (argc == 1) {
-		const char* arg0;
-		std::string arg0_tmp; ok &= jsval_to_std_string(cx, argv[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
+		std::string arg0;
+		ok &= jsval_to_std_string(cx, argv[0], &arg0);
 		JSB_PRECONDITION2(ok, cx, false, "js_jsb_sqlite_bridge_auto_SQLiteBridge_execSql : Error processing arguments");
-		const char* ret = cobj->execSql(arg0);
+		std::string ret = cobj->execSql(arg0);
 		jsval jsret = JSVAL_NULL;
-		jsret = c_string_to_jsval(cx, ret);
+		jsret = std_string_to_jsval(cx, ret);
 		JS_SET_RVAL(cx, vp, jsret);
 		return true;
 	}
@@ -61,36 +61,14 @@ bool js_jsb_sqlite_bridge_auto_SQLiteBridge_execSql(JSContext *cx, uint32_t argc
 	JS_ReportError(cx, "js_jsb_sqlite_bridge_auto_SQLiteBridge_execSql : wrong number of arguments: %d, was expecting %d", argc, 1);
 	return false;
 }
-bool js_jsb_sqlite_bridge_auto_SQLiteBridge_getAccesser(JSContext *cx, uint32_t argc, jsval *vp)
-{
-	jsval *argv = JS_ARGV(cx, vp);
-	bool ok = true;
-	if (argc == 1) {
-		const char* arg0;
-		std::string arg0_tmp; ok &= jsval_to_std_string(cx, argv[0], &arg0_tmp); arg0 = arg0_tmp.c_str();
-		JSB_PRECONDITION2(ok, cx, false, "js_jsb_sqlite_bridge_auto_SQLiteBridge_getAccesser : Error processing arguments");
-		SQLiteBridge* ret = SQLiteBridge::getAccesser(arg0);
-		jsval jsret = JSVAL_NULL;
-		do {
-		if (ret) {
-			js_proxy_t *jsProxy = js_get_or_create_proxy<SQLiteBridge>(cx, (SQLiteBridge*)ret);
-			jsret = OBJECT_TO_JSVAL(jsProxy->obj);
-		} else {
-			jsret = JSVAL_NULL;
-		}
-	} while (0);
-		JS_SET_RVAL(cx, vp, jsret);
-		return true;
-	}
-	JS_ReportError(cx, "js_jsb_sqlite_bridge_auto_SQLiteBridge_getAccesser : wrong number of arguments");
-	return false;
-}
-
 bool js_jsb_sqlite_bridge_auto_SQLiteBridge_constructor(JSContext *cx, uint32_t argc, jsval *vp)
 {
 	jsval *argv = JS_ARGV(cx, vp);
 	bool ok = true;
-    SQLiteBridge* cobj = new (std::nothrow) SQLiteBridge();
+    std::string arg0;
+    ok &= jsval_to_std_string(cx, argv[0], &arg0);
+    JSB_PRECONDITION2(ok, cx, false, "js_jsb_sqlite_bridge_auto_SQLiteBridge_constructor : Error processing arguments");
+    SQLiteBridge* cobj = new (std::nothrow) SQLiteBridge(arg0);
     TypeTest<SQLiteBridge> t;
     js_type_class_t *typeClass = nullptr;
     std::string typeName = t.s_name();
@@ -148,10 +126,7 @@ void js_register_jsb_sqlite_bridge_auto_SQLiteBridge(JSContext *cx, JSObject *gl
         JS_FS_END
 	};
 
-	static JSFunctionSpec st_funcs[] = {
-		JS_FN("getAccesser", js_jsb_sqlite_bridge_auto_SQLiteBridge_getAccesser, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-		JS_FS_END
-	};
+	JSFunctionSpec *st_funcs = NULL;
 
 	jsb_SQLiteBridge_prototype = JS_InitClass(
 		cx, global,

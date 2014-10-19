@@ -13,7 +13,6 @@ void js_jsb_sqlite_bridge_auto_SQLiteBridge_finalize(JSContext *cx, JSObject *ob
 void js_register_jsb_sqlite_bridge_auto_SQLiteBridge(JSContext *cx, JSObject *global);
 void register_all_jsb_sqlite_bridge_auto(JSContext* cx, JSObject* obj);
 bool js_jsb_sqlite_bridge_auto_SQLiteBridge_execSql(JSContext *cx, uint32_t argc, jsval *vp);
-bool js_jsb_sqlite_bridge_auto_SQLiteBridge_getAccesser(JSContext *cx, uint32_t argc, jsval *vp);
 bool js_jsb_sqlite_bridge_auto_SQLiteBridge_SQLiteBridge(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 

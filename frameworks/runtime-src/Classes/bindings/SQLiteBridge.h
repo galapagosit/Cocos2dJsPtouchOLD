@@ -8,12 +8,10 @@ class SQLiteBridge
 {
 private:
     sqlite3 *useDataBase = NULL;
-    
 public:
-    SQLiteBridge();
+    SQLiteBridge(std::string dbFileName);
     ~SQLiteBridge();
     
-    static SQLiteBridge *getAccesser(const char *dbFileName);
-    const char *execSql(const char *sql);
+    std::string execSql(std::string sql);
 };
 #endif

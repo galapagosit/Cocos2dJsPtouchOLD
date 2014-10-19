@@ -8,36 +8,27 @@ using namespace cocos2d;
 using namespace std;
 
 
-SQLiteBridge::SQLiteBridge()
+SQLiteBridge::SQLiteBridge(std::string dbFileName)
 {
-}
-
-SQLiteBridge::~SQLiteBridge()
-{
-    sqlite3_close(useDataBase);
-}
-
-SQLiteBridge *SQLiteBridge::getAccesser(const char *dbFileName)
-{
-    CCLOG("SQLiteBridge::getAccesser start : %s", dbFileName);
-    
-    SQLiteBridge *accesser = new SQLiteBridge();
+    CCLOG("SQLiteBridge::SQLiteBridge");
     char *errorMessage;
     
     //DBファイルの保存先のパス
     auto filePath = FileUtils::getInstance()->getWritablePath();
     filePath.append(dbFileName);
     
-    auto status = sqlite3_open(filePath.c_str(), &accesser->useDataBase);
+    auto status = sqlite3_open(filePath.c_str(), &this->useDataBase);
     if (status != SQLITE_OK){
         CCLOG("open failed : %s", errorMessage);
-        return NULL;
     }else{
         CCLOG("open sucessed");
     }
-    
-    CCLOG("SQLiteBridge::getAccesser end : %s", dbFileName);
-    return accesser;
+}
+
+SQLiteBridge::~SQLiteBridge()
+{
+    CCLOG("SQLiteBridge::~SQLiteBridge");
+    sqlite3_close(useDataBase);
 }
 
 static int execSqlCallback(void *data, int argc, char **argv, char **azColName){
@@ -51,23 +42,23 @@ static int execSqlCallback(void *data, int argc, char **argv, char **azColName){
     return 0;
 }
 
-const char *SQLiteBridge::execSql(const char *sql)
+std::string SQLiteBridge::execSql(std::string sql)
 {
-    CCLOG("SQLiteBridge::execSql start : %s", sql);
+    CCLOG("SQLiteBridge::execSql start : %s", sql.c_str());
     char *errorMessage;
     
     picojson::object result;
     picojson::array resultArray;
     
-    auto status = sqlite3_exec(useDataBase, sql, execSqlCallback, &resultArray, &errorMessage);
+    auto status = sqlite3_exec(useDataBase, sql.c_str(), execSqlCallback, &resultArray, &errorMessage);
+    result.insert(std::make_pair("status", picojson::value(double(status))));
     if( status != SQLITE_OK ){
         CCLOG("execSql failed : %s", errorMessage);
-        return NULL;
+        result.insert(std::make_pair("errorMessage", picojson::value(errorMessage)));
+    }else{
+        CCLOG("execSql sucessed");
+        result.insert(std::make_pair("result", picojson::value(resultArray)));
     }
-    result.insert(std::make_pair("result", picojson::value(resultArray)));
-    
     picojson::value json = picojson::value(result);
-    const char *json_str = json.serialize().c_str();
-    CCLOG("SQLiteBridge::execSql end : %s : %s", sql, json_str);
-    return json_str;
+    return json.serialize();
 }
