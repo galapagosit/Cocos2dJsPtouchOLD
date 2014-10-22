@@ -11,6 +11,8 @@ var jsList = [
     "src/common/mail_tool.js",
     "src/common/facebook_tool.js",
     "src/common/twitter_tool.js",
+    "src/common/sql_tool.js",
+    "src/model/field_auth.js",
     "src/scene/load_assets.js",
     "src/scene/index.js",
     "src/scene/menu.js",

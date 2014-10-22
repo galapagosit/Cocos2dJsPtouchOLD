@@ -62,7 +62,6 @@
 		8E9369D519D3C6B700460F03 /* TwitterTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369D219D3C6B700460F03 /* TwitterTool.mm */; };
 		8E9369DB19D3C70500460F03 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9369DA19D3C70500460F03 /* Social.framework */; };
 		8E9369DD19D3C76C00460F03 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9369DC19D3C76C00460F03 /* FacebookSDK.framework */; };
-		8E9369E319D3C81700460F03 /* FieldAuth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369E119D3C81700460F03 /* FieldAuth.cpp */; };
 		8E9369EC19D3C82500460F03 /* jsb_bridge_auto_api.js in Resources */ = {isa = PBXBuildFile; fileRef = 8E9369E619D3C82500460F03 /* jsb_bridge_auto_api.js */; };
 		8E9369ED19D3C82500460F03 /* Bridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9369E719D3C82500460F03 /* Bridge.cpp */; };
 		8E9369EE19D3C82500460F03 /* config_Bridge.ini in Resources */ = {isa = PBXBuildFile; fileRef = 8E9369E919D3C82500460F03 /* config_Bridge.ini */; };
@@ -318,8 +317,6 @@
 		8E9369DA19D3C70500460F03 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
 		8E9369DC19D3C76C00460F03 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/sdk/FacebookSDK.framework"; sourceTree = "<group>"; };
 		8E9369E019D3C81700460F03 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		8E9369E119D3C81700460F03 /* FieldAuth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldAuth.cpp; sourceTree = "<group>"; };
-		8E9369E219D3C81700460F03 /* FieldAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldAuth.h; sourceTree = "<group>"; };
 		8E9369E619D3C82500460F03 /* jsb_bridge_auto_api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsb_bridge_auto_api.js; sourceTree = "<group>"; };
 		8E9369E719D3C82500460F03 /* Bridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bridge.cpp; sourceTree = "<group>"; };
 		8E9369E819D3C82500460F03 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
@@ -502,8 +499,6 @@
 			isa = PBXGroup;
 			children = (
 				8E9369DF19D3C81700460F03 /* common */,
-				8E9369E119D3C81700460F03 /* FieldAuth.cpp */,
-				8E9369E219D3C81700460F03 /* FieldAuth.h */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -956,7 +951,6 @@
 				D4545227156E28EF00887EB5 /* AppDelegate.cpp in Sources */,
 				8E9369ED19D3C82500460F03 /* Bridge.cpp in Sources */,
 				8E424B3F19F2633C00F7A682 /* jsb_sqlite_bridge_auto.cpp in Sources */,
-				8E9369E319D3C81700460F03 /* FieldAuth.cpp in Sources */,
 				509D4AC817EBB2AB00697056 /* main.m in Sources */,
 				8E424B3419F258EC00F7A682 /* SQLiteBridge.cpp in Sources */,
 				509D4ABC17EBB2AB00697056 /* AppController.mm in Sources */,

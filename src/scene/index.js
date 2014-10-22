@@ -10,16 +10,6 @@ var IndexLayer = cc.Layer.extend({
         this.root = ccs.uiReader.widgetFromJsonFile(res.UiIndex_json);
         this.addChild(this.root);
 
-        cc.log("##################");
-        var accesser = new jsb.SQLiteBridge("hogehoge.db");
-        var ret = accesser.execSql("CREATE TABLE field_auth(id integer primary key autoincrement, field_name VARCHAR(32) UNIQUE, status VARCHAR(32))");
-        cc.log(ret);
-        var ret = accesser.execSql("INSERT INTO field_auth(field_name, status) VALUES('animal', 'open')");
-        cc.log(ret);
-        var ret = accesser.execSql("SELECT count(*) as cnt FROM field_auth");
-        cc.log(ret);
-        cc.log(JSON.parse(ret));
-
         // ボタン制御
         var button_start = ccui.helper.seekWidgetByName(this.root, "button_start");
         button_start.addTouchEventListener(this.buttonStartTouchEvent, this);

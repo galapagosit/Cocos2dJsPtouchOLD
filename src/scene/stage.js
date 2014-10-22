@@ -4,6 +4,18 @@ var StageLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
 
+        FieldAuth.init();
+
+        var can_enter = FieldAuth.canEnterField("animal");
+        cc.log("can_enter:" + can_enter);
+
+        var can_enter = FieldAuth.canEnterField("vegetable");
+        cc.log("can_enter:" + can_enter);
+
+        FieldAuth.enableEnterField("vegetable");
+        var can_enter = FieldAuth.canEnterField("vegetable");
+        cc.log("can_enter:" + can_enter);
+
         // UIの初期化
         this.root = ccs.uiReader.widgetFromJsonFile(res.UiStage_json);
         this.addChild(this.root);
@@ -14,15 +26,6 @@ var StageLayer = cc.Layer.extend({
 
         var button_stage_animal = ccui.helper.seekWidgetByName(this.root, "button_stage_animal");
         button_stage_animal.addTouchEventListener(this.buttonStageAnimalTouchEvent, this);
-
-        // フィールドに入れる、入れないのテスト
-        var can_enter = jsb.Bridge.fieldAuthCanEnterField("vegetable");
-        cc.log("can_enter:" + can_enter);
-
-        jsb.Bridge.fieldAuthEnableEnterField("vegetable");
-
-        var can_enter = jsb.Bridge.fieldAuthCanEnterField("vegetable");
-        cc.log("can_enter:" + can_enter);
 
         return true;
     },

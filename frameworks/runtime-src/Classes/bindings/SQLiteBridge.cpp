@@ -10,7 +10,6 @@ using namespace std;
 
 SQLiteBridge::SQLiteBridge(std::string dbFileName)
 {
-    CCLOG("SQLiteBridge::SQLiteBridge");
     char *errorMessage;
     
     //DBファイルの保存先のパス
@@ -20,8 +19,7 @@ SQLiteBridge::SQLiteBridge(std::string dbFileName)
     auto status = sqlite3_open(filePath.c_str(), &this->useDataBase);
     if (status != SQLITE_OK){
         CCLOG("open failed : %s", errorMessage);
-    }else{
-        CCLOG("open sucessed");
+        return;
     }
 }
 
@@ -56,7 +54,6 @@ std::string SQLiteBridge::execSql(std::string sql)
         CCLOG("execSql failed : %s", errorMessage);
         result.insert(std::make_pair("errorMessage", picojson::value(errorMessage)));
     }else{
-        CCLOG("execSql sucessed");
         result.insert(std::make_pair("result", picojson::value(resultArray)));
     }
     picojson::value json = picojson::value(result);
