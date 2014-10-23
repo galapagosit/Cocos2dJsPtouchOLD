@@ -46,10 +46,10 @@ echo "    PYTHON_BIN: $PYTHON_BIN"
 echo "    CXX_GENERATOR_ROOT: $CXX_GENERATOR_ROOT"
 echo "    TO_JS_ROOT: $TO_JS_ROOT"
 
-# check NDK version, must be r9b
-if ! grep -q r9b $NDK_ROOT/RELEASE.TXT
+# check NDK version, must be r9d
+if ! grep -q r9d $NDK_ROOT/RELEASE.TXT
 then
-    echo " Fatal Error: NDK r9b must be required!"
+    echo " Fatal Error: NDK r9d must be required!"
     exit 1
 fi
 
@@ -117,5 +117,5 @@ echo "Generating bindings for cocos2dx..."
 set -x
 
 
-LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${OUTPUT_DIR}/config_Bridge.ini -t spidermonkey -s Bridge -o ${OUTPUT_DIR}
+#LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${OUTPUT_DIR}/config_Bridge.ini -t spidermonkey -s Bridge -o ${OUTPUT_DIR}
 LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${OUTPUT_DIR}/config_SQLiteBridge.ini -t spidermonkey -s SQLiteBridge -o ${OUTPUT_DIR}
