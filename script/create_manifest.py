@@ -20,7 +20,7 @@ from docopt import docopt
 
 
 # ファイル配信URL
-STATIC_URL = 'http://128.199.166.94/static/'
+STATIC_URL = 'http://static.galapagosit.com'
 
 # マニフェストファイルパス
 MANIFEST_PATH = 'res/Manifests/project.manifest'
@@ -49,8 +49,8 @@ def init_manifest(version):
     """
     manifest = {}
     manifest['packageUrl'] = STATIC_URL
-    manifest['remoteManifestUrl'] = STATIC_URL + MANIFEST_PATH
-    manifest['remoteVersionUrl'] = STATIC_URL + VERSION_PATH
+    manifest['remoteManifestUrl'] = STATIC_URL + '/' + MANIFEST_PATH
+    manifest['remoteVersionUrl'] = STATIC_URL + '/' + VERSION_PATH
     manifest['version'] = version
     manifest['engineVersion'] = ENGINE_VERSION
     return manifest

@@ -37,10 +37,10 @@
       "md5": "452f2a82211497c828476cef1fe84bf6"
     }, 
     "res/Manifests/project.manifest": {
-      "md5": "7cb3219e52c40d9166fab09649149acc"
+      "md5": "534359ef3b5007f56bff708a70f5a3f1"
     }, 
     "res/Manifests/version.manifest": {
-      "md5": "bc88e7dce20f5fa3a63497ca5e261e34"
+      "md5": "2e1284a2a7b841e3bd14f6ea4e48a711"
     }, 
     "res/PtouchUi/05_PassDialog/base_dialog.png": {
       "md5": "a3ac22f4513e10623a83d488cbcf3db3"
@@ -111,9 +111,6 @@
     "res/PtouchUi/05_PassDialog/master_num_09.png": {
       "md5": "96969fcd8b2142451451246e5e8f23e0"
     }, 
-    "res/PtouchUi/10_InfoDialog/.DS_Store": {
-      "md5": "194577a7e20bdcc7afbb718f502c134c"
-    }, 
     "res/PtouchUi/10_InfoDialog/base_dialog.png": {
       "md5": "4cc38240e307b1260e4f512ab4a84fc1"
     }, 
@@ -127,7 +124,7 @@
       "md5": "64859ae4369b5880b4e6ae18e2d37094"
     }, 
     "res/PtouchUi/adults_confirm_modal.json": {
-      "md5": "c7d70390ae07fcb73448c45114ef1946"
+      "md5": "4120f1949a8093c5cd1acaf03335336a"
     }, 
     "res/PtouchUi/background/field.jpg": {
       "md5": "cd2b7e2d10ebe77448ecd566f4e18145"
@@ -145,16 +142,19 @@
       "md5": "1e80d930d0fb77d276db4919765b4f78"
     }, 
     "res/PtouchUi/common_scroll_sheet.json": {
-      "md5": "91cb05c9270e3d2549b3a4d1daff5138"
+      "md5": "83d559d05248413936c9a870be54777a"
     }, 
     "res/PtouchUi/field.json": {
-      "md5": "bbbcf8c563dab72ad90d93e00921147f"
+      "md5": "3ed6a1459441971ebb6e345388b75e0b"
     }, 
     "res/PtouchUi/index.json": {
-      "md5": "89a9be617bf195261f61da97a7461ff0"
+      "md5": "aac3058d5d1d36d203e56782231a28a5"
+    }, 
+    "res/PtouchUi/info_modal.json": {
+      "md5": "d2a01c37f815890d8f95278cdb398c62"
     }, 
     "res/PtouchUi/menu.json": {
-      "md5": "95f843d3c7680b806fa7071761559d59"
+      "md5": "fa3b30ca8700a33152aab3a7a920fb2a"
     }, 
     "res/PtouchUi/menu_frame.png": {
       "md5": "f6ff2af2bb7a50100eb5040a66977a03"
@@ -163,7 +163,7 @@
       "md5": "d9a4d20bf2465a647c0f8e51ca3cbb1c"
     }, 
     "res/PtouchUi/stage.json": {
-      "md5": "29a0ed090f4e54cc70afa9db50681937"
+      "md5": "a29fe77f94e001e00b7bff3fd5fe6d2b"
     }, 
     "res/PtouchUi/stage_animal.png": {
       "md5": "bfde3e591fb04312f71a9a8abc4b3dde"
@@ -171,20 +171,41 @@
     "res/favicon.ico": {
       "md5": "53603b8cb29a0ab96620fa1e1b0df4bd"
     }, 
+    "res/fonts/.DS_Store": {
+      "md5": "194577a7e20bdcc7afbb718f502c134c"
+    }, 
+    "res/fonts/Abduction.ttf": {
+      "md5": "1f081ca516cc6d4b3614032cf03e08e9"
+    }, 
     "res/sound/.DS_Store": {
       "md5": "194577a7e20bdcc7afbb718f502c134c"
     }, 
-    "res/sound/Animals/bear.mp3": {
+    "res/sound/Animals/Bear.mp3": {
       "md5": "5f07912ab46b1b1bd02c01d4a6a26f0c"
+    }, 
+    "res/sound/Animals/Panda.mp3": {
+      "md5": "5f07912ab46b1b1bd02c01d4a6a26f0c"
+    }, 
+    "res/switch/switch-mask.png": {
+      "md5": "053bd2e8f5de054dcc904707bec049a0"
+    }, 
+    "res/switch/switch-off.png": {
+      "md5": "df3eabcf24b4b6d868624b12dab48341"
+    }, 
+    "res/switch/switch-on.png": {
+      "md5": "8c3a02da2acb9bccfe3caab566081d51"
+    }, 
+    "res/switch/switch-thumb.png": {
+      "md5": "afbb3b37c3aba2d3580382b64932998a"
     }, 
     "src.zip": {
       "compressed": true, 
-      "md5": "9ff06f4f5acca0739279bebdd641525f"
+      "md5": "d7e80c188b38a0eeb4844ddea13afc9c"
     }
   }, 
   "engineVersion": "3.0", 
-  "packageUrl": "http://128.199.166.94/static/", 
-  "remoteManifestUrl": "http://128.199.166.94/static/res/Manifests/project.manifest", 
-  "remoteVersionUrl": "http://128.199.166.94/static/res/Manifests/version.manifest", 
+  "packageUrl": "http://static.galapagosit.com", 
+  "remoteManifestUrl": "http://static.galapagosit.com/res/Manifests/project.manifest", 
+  "remoteVersionUrl": "http://static.galapagosit.com/res/Manifests/version.manifest", 
   "version": "1.0.0"
 }
