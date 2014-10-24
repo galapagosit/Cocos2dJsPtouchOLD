@@ -52,13 +52,13 @@ cc.game.onStart = function(){
     cc.view.setDesignResolutionSize(1280, 720, cc.ResolutionPolicy.SHOW_ALL);
     cc.view.resizeWithBrowserSize(true);
 
-    cc.LoaderScene.preload([], function () {
-        cc.director.runScene(new LoadAssetsScene());
-    }, this);
-    //cc.loader.loadJs(["src/jsList.js"], function(){
-    //    cc.loader.loadJs(jsList, function(){
-    //        cc.director.runScene(new IndexScene());
-    //    });
-    //});
+    //cc.LoaderScene.preload([], function () {
+    //    cc.director.runScene(new LoadAssetsScene());
+    //}, this);
+    cc.loader.loadJs(["src/jsList.js"], function(){
+        cc.loader.loadJs(jsList, function(){
+            cc.director.runScene(new IndexScene());
+        });
+    });
 };
 cc.game.run();

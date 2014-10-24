@@ -4,17 +4,7 @@ var StageLayer = cc.Layer.extend({
     ctor:function () {
         this._super();
 
-        FieldAuth.init();
-
-        var can_enter = FieldAuth.canEnterField("animal");
-        cc.log("can_enter:" + can_enter);
-
-        var can_enter = FieldAuth.canEnterField("vegetable");
-        cc.log("can_enter:" + can_enter);
-
-        FieldAuth.enableEnterField("vegetable");
-        var can_enter = FieldAuth.canEnterField("vegetable");
-        cc.log("can_enter:" + can_enter);
+        FieldAuthAPI.initDB();
 
         // UIの初期化
         this.root = ccs.uiReader.widgetFromJsonFile(res.UiStage_json);
@@ -24,8 +14,8 @@ var StageLayer = cc.Layer.extend({
         var button_index = ccui.helper.seekWidgetByName(this.root, "button_index");
         button_index.addTouchEventListener(this.buttonIndexTouchEvent, this);
 
-        var button_stage_animal = ccui.helper.seekWidgetByName(this.root, "button_stage_animal");
-        button_stage_animal.addTouchEventListener(this.buttonStageAnimalTouchEvent, this);
+        // フィールド一覧を初期化
+        this.initFields();
 
         return true;
     },
@@ -36,6 +26,13 @@ var StageLayer = cc.Layer.extend({
             cc.director.runScene(new cc.TransitionFade(0.5, new IndexScene()));
             break;
         }
+    },
+    initFields: function () {
+        var all_fields = FieldAuthAPI.allFields();
+        _.each(all_fields, function(element, index, array) {
+            cc.log(element.field_name);
+            cc.log(element.canEnterField());
+        }, this);
     },
     buttonStageAnimalTouchEvent: function (sender, type) {
         switch (type) {

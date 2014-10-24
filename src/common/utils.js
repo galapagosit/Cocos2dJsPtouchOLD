@@ -1,14 +1,12 @@
 
 var CommonUtil = {
     hideChildren:function (node) {
-        cc.log(node.getName() + " >>> setOpacity");
         node.setOpacity(0);
         _.each(node.getChildren(), function(element, index, array) {
               this.hideChildren(element);
         }, this);
     },
     fadeToChildren:function (node, duration, opacity) {
-        cc.log(node.getName() + " >>> fadeToChildren");
         var fade_action = cc.fadeTo(duration, opacity);
         node.runAction(fade_action);
         _.each(node.getChildren(), function(element, index, array) {
