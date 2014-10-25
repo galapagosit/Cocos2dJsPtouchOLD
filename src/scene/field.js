@@ -212,6 +212,8 @@ var FieldLayer = cc.Layer.extend({
             cc.eventManager.addEventListenerWithSceneGraphPriority(listener, armature);
 
             this.big_layer.addChild(armature);
+            CommonUtil.dispContentSize(armature, cc.color.BLUE);
+            CommonUtil.dispAnchorPoint(armature, cc.color.RED);
         }, this);
     }
 });

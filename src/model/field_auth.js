@@ -69,6 +69,9 @@ function Field() {
     this.canEnterField = function() {
         return FieldAuthAPI.canEnterField(this.field_name);
     };
+    this.imageFile = function() {
+        return 'res/image/field/' + this.field_name + '.png';
+    };
 };
 
 var FieldAuthAPI = {
