@@ -7,6 +7,7 @@ var res = {
     UiAdultsConfirmModal_json : "res/PtouchUi/adults_confirm_modal.json",
     UiInfoModal_json : "res/PtouchUi/info_modal.json",
     UiCommonScrollSheet_json : "res/PtouchUi/common_scroll_sheet.json",
+    UiPromotionS_json : "res/PtouchUi/promotion_s.json",
     AnimationBear_json : "res/Animation/Animals/Bear/Bear.ExportJson",
     AnimationPanda_json : "res/Animation/Animals/Panda/Panda.ExportJson",
     Bear_mp3 : "res/sound/Animals/bear.mp3"

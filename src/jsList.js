@@ -18,5 +18,6 @@ var jsList = [
     "src/scene/select_test.js",
     "src/scene/common/adults_confirm_modal.js",
     "src/scene/common/info_modal.js",
-    "src/scene/common/common_scroll_sheet.js"
+    "src/scene/common/common_scroll_sheet.js",
+    "src/scene/common/promotion_s.js"
 ]

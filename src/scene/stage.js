@@ -2,6 +2,7 @@
 var StageLayer = cc.Layer.extend({
     root: null,
     contain_layer: null,
+    promotion_s_controller: null,
     page: 1,
     ctor:function () {
         this._super();
@@ -24,6 +25,10 @@ var StageLayer = cc.Layer.extend({
 
         var button_scroll_right = ccui.helper.seekWidgetByName(this.root, "button_scroll_right");
         button_scroll_right.addTouchEventListener(this.buttonScrollRightTouchEvent, this);
+
+        // 課金 + シェア画面
+        this.promotion_s_controller = new PromotionSController();
+        this.promotion_s_controller.init(this.root);
 
         return true;
     },
@@ -66,6 +71,7 @@ var StageLayer = cc.Layer.extend({
             }
  
             // タッチイベント登録
+            var that = this;
             var listener = cc.EventListener.create({
                 event: cc.EventListener.TOUCH_ONE_BY_ONE,
                 swallowTouches: false,
@@ -84,13 +90,14 @@ var StageLayer = cc.Layer.extend({
                         cc.log("sprite began... x = " + locationInNode.x + ", y = " + locationInNode.y);
                         cc.log(target.getName() + " >>> tapped");
 
-                        // 入れるフィールドなら
+                        // 入れるフィールドならシーン遷移
                         if(target.field.canEnterField()){
                             cc.LoaderScene.preload(g_resources, function () {
                                 cc.director.runScene(new FieldScene(target.field.field_name));
-                            }, this);
+                            }, that);
+                        // 入れなければ課金ページ
                         }else{
-
+                            that.promotion_s_controller.appear(target.field);
                         }
 
                         return true;
@@ -146,15 +153,6 @@ var StageLayer = cc.Layer.extend({
             button_scroll_right.setEnabled(true);
         }
     }
-    //buttonStageAnimalTouchEvent: function (sender, type) {
-    //    switch (type) {
-    //    case ccui.Widget.TOUCH_ENDED:
-    //        cc.log(sender.getName() + " >>> Touch Up");
-    //        break;
-    //    default:
-    //        break;
-    //    }
-    //}
 });
 
 var StageScene = cc.Scene.extend({
