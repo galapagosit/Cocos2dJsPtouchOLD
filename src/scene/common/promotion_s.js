@@ -49,13 +49,12 @@ var PromotionSController = cc.Class.extend({
         switch (type) {
         case ccui.Widget.TOUCH_ENDED:
             cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
+            this.is_share_appear = !this.is_share_appear;
             if(this.is_share_appear){
                 ccs.actionManager.playActionByName(res.UiPromotionS_json, "share_in");
             }else{
                 ccs.actionManager.playActionByName(res.UiPromotionS_json, "share_out");
             }
-            this.is_share_appear = !this.is_share_appear;
-            cc.log(this.is_share_appear);
             break;
         }
     }
