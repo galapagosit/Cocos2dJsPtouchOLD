@@ -3,32 +3,37 @@ var FIELD_INIT_DATA = [
     {
         field_name: 'animal',
         default_status: 'open',
+        payment_id: null,
         can_open_by_payment: false,
         can_open_by_share: false
     },
     {
         field_name: 'color',
         default_status: 'close',
+        payment_id: null,
         can_open_by_payment: false,
         can_open_by_share: true
     },
     {
         field_name: 'vegetable',
         default_status: 'close',
+        payment_id: 'field_vegetable',
         can_open_by_payment: true,
         can_open_by_share: true
     },
     {
         field_name: 'vehicle',
         default_status: 'close',
+        payment_id: 'field_vehicle',
         can_open_by_payment: true,
         can_open_by_share: false
     },
     {
         field_name: 'hoge',
         default_status: 'close',
-        can_open_by_payment: true,
-        can_open_by_share: false
+        payment_id: null,
+        can_open_by_payment: false,
+        can_open_by_share: true
     }
 ];
 
@@ -71,6 +76,9 @@ function Field() {
     };
     this.imageFile = function() {
         return 'res/image/field/' + this.field_name + '.png';
+    };
+    this.paymentItemId = function() {
+        return 'field_' + this.field_name;
     };
 };
 

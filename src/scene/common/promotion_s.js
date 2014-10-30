@@ -17,6 +17,9 @@ var PromotionSController = cc.Class.extend({
 
         var button_get_by_share = ccui.helper.seekWidgetByName(this.promotion_layer, "button_get_by_share");
         button_get_by_share.addTouchEventListener(this.buttonGetByShareTouchEvent, this);
+
+        var button_get_by_payment = ccui.helper.seekWidgetByName(this.promotion_layer, "button_get_by_payment");
+        button_get_by_payment.addTouchEventListener(this.buttonGetByPaymentTouchEvent, this);
     },
     buttonPromotionSCloseTouchEvent: function (sender, type) {
         switch (type) {
@@ -26,7 +29,7 @@ var PromotionSController = cc.Class.extend({
             break;
         }
     },
-    appear: function (title, field) {
+    appear: function (field) {
         this.field = field;
 
         this.promotion_layer.y = -720;
@@ -36,6 +39,8 @@ var PromotionSController = cc.Class.extend({
 
         var move = cc.moveTo(1, cc.p(0, 0)).easing(cc.easeElasticOut());
         this.promotion_layer.runAction(cc.sequence(move));
+
+        getPurchaseItemPrice(field.payment_id);
     },
     disappear: function () {
         var move = cc.moveTo(1, cc.p(0, -720)).easing(cc.easeElasticOut());
@@ -55,6 +60,14 @@ var PromotionSController = cc.Class.extend({
             }else{
                 ccs.actionManager.playActionByName(res.UiPromotionS_json, "share_out");
             }
+            break;
+        }
+    },
+    buttonGetByPaymentTouchEvent: function (sender, type) {
+        switch (type) {
+        case ccui.Widget.TOUCH_ENDED:
+            cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
+            purchaseItem(this.field.paymentItemId());
             break;
         }
     }

@@ -30,6 +30,9 @@ var StageLayer = cc.Layer.extend({
         this.promotion_s_controller = new PromotionSController();
         this.promotion_s_controller.init(this.root);
 
+        // 内部的に課金情報を取得
+        queryPaymentInfoList();
+
         return true;
     },
     buttonIndexTouchEvent: function (sender, type) {

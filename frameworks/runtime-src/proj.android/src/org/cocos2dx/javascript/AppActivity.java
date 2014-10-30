@@ -26,23 +26,24 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.javascript;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
-import org.cocos2dx.lib.Cocos2dxHandler;
-import org.cocos2dx.lib.Cocos2dxHelper;
-import org.cocos2dx.lib.Cocos2dxVideoHelper;
-
-// for FACEBOOK SDK start
-import org.cocos2dx.plugin.PluginWrapper;
+import org.cocos2dx.lib.Cocos2dxJavascriptJavaBridge;
 import org.cocos2dx.plugin.FacebookWrapper;
-// for FACEBOOK SDK end
-
-// for Twitter start
+import org.cocos2dx.plugin.PluginWrapper;
 import org.ptouch.application.social.TwitterCallbackAsyncTask;
 import org.ptouch.application.social.TwitterTool;
 import org.ptouch.application.util.IabHelper;
 import org.ptouch.application.util.IabResult;
-// for Twitter end
+import org.ptouch.application.util.Inventory;
+import org.ptouch.application.util.Purchase;
+import org.ptouch.application.util.SkuDetails;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -53,6 +54,8 @@ public class AppActivity extends Cocos2dxActivity {
 
     // for In-app Billing start
     IabHelper mHelper;
+    List<String> additionalSkuList = Collections.synchronizedList(new ArrayList<String>());
+    Map<String, Object> skuMap = Collections.synchronizedMap(new HashMap<String, Object>());
     // for In-app Billing end
 
     @Override
@@ -142,5 +145,123 @@ public class AppActivity extends Cocos2dxActivity {
     }
     /*
      * for Twitter end
+     */
+    
+    /*
+     * for In-app Billing start
+     */
+    public static void queryInventoryList(String commaSeparatedInventoryList){
+        Log.d("AppActivity", "queryInventoryList");
+
+        AppActivity app = (AppActivity) AppActivity.getContext();
+        
+        String[] array = commaSeparatedInventoryList.split(",");
+        
+        app.additionalSkuList.clear();
+        for(int i = 0; i < array.length; i++){
+            app.additionalSkuList.add(array[i]);
+        }
+        
+        //we must use runOnUiThread here
+        app.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                AppActivity app = (AppActivity) AppActivity.getContext();
+                app.queryInventoryListOnUiThread();
+            }
+        });
+    }
+    
+    public void queryInventoryListOnUiThread(){
+        mHelper.queryInventoryAsync(true, additionalSkuList, mQueryFinishedListener);
+    }
+    
+    IabHelper.QueryInventoryFinishedListener mQueryFinishedListener = new IabHelper.QueryInventoryFinishedListener() {
+        public void onQueryInventoryFinished(IabResult result, Inventory inventory)
+        {
+            if (result.isFailure()) {
+                // handle error
+                Log.d("AppActivity", "onQueryInventoryFinished:error");
+                return;
+            }
+
+            for (String sku: additionalSkuList) {
+                SkuDetails skuDetails = inventory.getSkuDetails(sku);
+                if(skuDetails == null){
+                    Log.d("AppActivity", "SkuDetails is NULL sku:" + sku);
+                    continue;
+                }
+                
+                HashMap<String, Object> skuDetailMap = new HashMap<String, Object>();
+                skuDetailMap.put("price", skuDetails.getPrice());
+                skuDetailMap.put("purchased", inventory.hasPurchase(sku));
+
+                Log.d("AppActivity", "put skuDetailMap:" + skuDetailMap);
+                skuMap.put(sku, skuDetailMap);
+            }
+        }
+    };
+    
+    public static String getSkuPrice(String sku){
+        Log.d("AppActivity", "getPrice:" + sku);
+        AppActivity app = (AppActivity) AppActivity.getContext();
+        if(!app.skuMap.containsKey(sku)){
+            Log.d("AppActivity", "error skuMap not contain sku:" + sku);
+            return "";
+        }
+        
+        Object hashMap = app.skuMap.get(sku);
+        HashMap<String, Object> skuDetailMap = ((HashMap<String, Object>)hashMap);
+        
+        Log.d("AppActivity", "skuPrice:" + (String)(skuDetailMap.get("price")));
+        return (String)(skuDetailMap.get("price"));
+    }
+    
+    public static void launchPurchaseFlow(String sku){
+        Log.d("AppActivity", "launchPurchaseFlow:" + sku);
+        //we must use runOnUiThread here
+        class PurchaseRunner implements Runnable{
+            private String sku;
+            public PurchaseRunner(String sku){
+                this.sku = sku;
+            }
+            @Override
+            public void run() {
+                AppActivity app = (AppActivity) AppActivity.getContext();
+                app.launchPurchaseFlowOnUiThread(this.sku);
+            }
+        };
+        AppActivity app = (AppActivity) AppActivity.getContext();
+        app.runOnUiThread(new PurchaseRunner(sku));
+    }
+    
+    public void launchPurchaseFlowOnUiThread(String sku){
+        mHelper.launchPurchaseFlow(this, sku, 10001,
+                mPurchaseFinishedListener, "");
+    }
+    
+    IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
+        public void onIabPurchaseFinished(IabResult result, Purchase purchase)
+        {
+           if (result.isFailure()) {
+              Log.d("AppActivity", "OnIabPurchaseFinishedListener error" + result);
+              return;
+           }
+           Log.d("AppActivity", "onIabPurchaseFinished Sku:" + purchase.getSku());
+           Log.d("AppActivity", "onIabPurchaseFinished OrderId:" + purchase.getOrderId());
+           Log.d("AppActivity", "onIabPurchaseFinished DeveloperPayload:" + purchase.getDeveloperPayload());
+           
+           // 購入結果をjs側で反映
+           AppActivity app = (AppActivity) AppActivity.getContext();
+           app.runOnGLThread(new Runnable() {
+               @Override
+               public void run() {
+                   Cocos2dxJavascriptJavaBridge.evalString("cc.log(\"Javascript Java bridge!\")");
+               }
+           });
+        }
+    };
+    /*
+     * for In-app Billing end
      */
 }

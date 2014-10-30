@@ -9,6 +9,7 @@ var jsList = [
     "src/common/facebook_tool.js",
     "src/common/twitter_tool.js",
     "src/common/sql_tool.js",
+    "src/common/payment_tool.js",
     "src/model/field_auth.js",
     "src/scene/load_assets.js",
     "src/scene/index.js",
