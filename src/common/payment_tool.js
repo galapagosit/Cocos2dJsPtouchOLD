@@ -53,3 +53,9 @@ var purchaseItem = function(item_id){
         //                                          share_mail_title, share_mail_message);
     }
 };
+
+var itemPurchased = function(item_id){
+    cc.log("itemPurchased:" + item_id);
+    var field_name = _.detect(FIELD_INIT_DATA, function(field_data){ return field_data.payment_id === item_id; }).field_name;
+    FieldAuthAPI.enableEnterField(field_name);
+};

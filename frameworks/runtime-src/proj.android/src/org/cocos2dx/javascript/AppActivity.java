@@ -44,6 +44,7 @@ import org.ptouch.application.util.IabResult;
 import org.ptouch.application.util.Inventory;
 import org.ptouch.application.util.Purchase;
 import org.ptouch.application.util.SkuDetails;
+import org.ptouch.application.payment.PurchasedRunner;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -198,6 +199,12 @@ public class AppActivity extends Cocos2dxActivity {
 
                 Log.d("AppActivity", "put skuDetailMap:" + skuDetailMap);
                 skuMap.put(sku, skuDetailMap);
+                
+                // 通常は購入後のコールバックで行うべき処理だが、アプリインストールし直し、購入したけど反映されないケースのリカバリ
+                if(inventory.hasPurchase(sku)){
+                    AppActivity app = (AppActivity) AppActivity.getContext();
+                    app.runOnGLThread(new PurchasedRunner(sku));
+                }
             }
         }
     };
@@ -253,12 +260,7 @@ public class AppActivity extends Cocos2dxActivity {
            
            // 購入結果をjs側で反映
            AppActivity app = (AppActivity) AppActivity.getContext();
-           app.runOnGLThread(new Runnable() {
-               @Override
-               public void run() {
-                   Cocos2dxJavascriptJavaBridge.evalString("cc.log(\"Javascript Java bridge!\")");
-               }
-           });
+           app.runOnGLThread(new PurchasedRunner(purchase.getSku()));
         }
     };
     /*
