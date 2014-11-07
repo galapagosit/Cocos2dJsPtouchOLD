@@ -12,7 +12,7 @@ var IndexLayer = cc.Layer.extend({
 
         // ボタン制御
         var button_start = ccui.helper.seekWidgetByName(this.root, "button_start");
-        button_start.addTouchEventListener(this.buttonStartTouchEvent, this);
+        ButtonTool.attachEventLikeJelly(button_start, this.buttonStartTouchEvent, this);
 
         var button_invite = ccui.helper.seekWidgetByName(this.root, "button_invite");
         button_invite.addTouchEventListener(this.buttonInviteTouchEvent, this);
@@ -51,12 +51,7 @@ var IndexLayer = cc.Layer.extend({
         return true;
     },
     buttonStartTouchEvent: function (sender, type) {
-        switch (type) {
-        case ccui.Widget.TOUCH_ENDED:
-            cc.log(sender.getName() + " >>> ccui.Widget.TOUCH_ENDED");
-            cc.director.runScene(new cc.TransitionFade(0.5, new StageScene()));
-            break;
-        }
+        cc.director.runScene(new cc.TransitionFade(0.5, new StageScene()));
     },
     buttonInviteTouchEvent: function (sender, type) {
         switch (type) {

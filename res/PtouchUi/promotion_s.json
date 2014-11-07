@@ -135,6 +135,9 @@
   "textures": [],
   "texturesPng": [
     "background/index.png",
+    "button_normal.png",
+    "button_pressed.png",
+    "button_disabled.png",
     "button.png",
     "background/stage.jpg",
     "button.png",

@@ -135,6 +135,9 @@
   "textures": [],
   "texturesPng": [
     "background/index.png",
+    "button_normal.png",
+    "button_pressed.png",
+    "button_disabled.png",
     "button.png"
   ],
   "version": "1.6.0.0",
@@ -219,11 +222,11 @@
           "ignoreSize": true,
           "layoutParameter": null,
           "opacity": 255,
-          "positionPercentX": 0.5,
+          "positionPercentX": 0.5015625,
           "positionPercentY": 0.5555556,
           "positionType": 0,
           "rotation": 0,
-          "scaleX": 2,
+          "scaleX": 1,
           "scaleY": 1,
           "sizePercentX": 0.15625,
           "sizePercentY": 0.0833333358,
@@ -233,7 +236,7 @@
           "useMergedTexture": false,
           "visible": true,
           "width": 200,
-          "x": 640,
+          "x": 642,
           "y": 400,
           "capInsetsHeight": 1,
           "capInsetsWidth": 1,
@@ -241,8 +244,8 @@
           "capInsetsY": 0,
           "disabled": null,
           "disabledData": {
-            "path": null,
-            "plistFile": null,
+            "path": "button_disabled.png",
+            "plistFile": "",
             "resourceType": 0
           },
           "fontName": "微软雅黑",
@@ -250,14 +253,14 @@
           "fontType": 0,
           "normal": null,
           "normalData": {
-            "path": "button.png",
+            "path": "button_normal.png",
             "plistFile": "",
             "resourceType": 0
           },
           "pressed": null,
           "pressedData": {
-            "path": null,
-            "plistFile": null,
+            "path": "button_pressed.png",
+            "plistFile": "",
             "resourceType": 0
           },
           "scale9Enable": false,
