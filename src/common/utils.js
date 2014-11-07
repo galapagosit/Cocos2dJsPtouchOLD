@@ -13,9 +13,20 @@ var CommonUtil = {
               this.fadeToChildren(element, duration, opacity);
         }, this);
     },
+    dispPos:function (node, color) {
+        var draw = new cc.DrawNode();
+        size = node.getContentSize();
+        draw.drawDot(cc.p(0, 0), 5, color);
+        node.addChild(draw, node.getLocalZOrder() + 1);
+    },
     dispAnchorPoint:function (node, color) {
         var draw = new cc.DrawNode();
-        draw.drawDot(cc.p(0, 0), 5, color);
+        size = node.getContentSize();
+        draw.drawDot(
+            cc.p(size.width * node.anchorX,
+                 size.height * node.anchorY),
+                 5,
+                 color);
         node.addChild(draw, node.getLocalZOrder() + 1);
     },
     dispContentSize:function (node, color) {

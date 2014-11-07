@@ -57,6 +57,7 @@ cc.game.onStart = function(){
     //}, this);
     cc.loader.loadJs(["src/jsList.js"], function(){
         cc.loader.loadJs(jsList, function(){
+            //cc.director.runScene(new ActionScene());
             cc.director.runScene(new IndexScene());
         });
     });
