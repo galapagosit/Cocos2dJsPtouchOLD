@@ -19,7 +19,6 @@ var jsList = [
     "src/scene/field.js",
     "src/scene/select_test.js",
     "src/scene/physics_test.js",
-    "src/scene/action.js",
     "src/scene/common/adults_confirm_modal.js",
     "src/scene/common/info_modal.js",
     "src/scene/common/common_scroll_sheet.js",
