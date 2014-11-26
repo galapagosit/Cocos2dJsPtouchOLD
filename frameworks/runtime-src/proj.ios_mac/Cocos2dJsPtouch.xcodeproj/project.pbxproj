@@ -724,7 +724,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					A922753C1517C094001B78AA = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = XAL82XL3DH;
 					};
 				};
 			};
@@ -1116,6 +1116,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1135,6 +1136,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
+				PROVISIONING_PROFILE = "4cad03d7-58ec-4cf4-9562-06a577240852";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/PluginFacebook $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/protocols/platform/ios";
@@ -1146,6 +1148,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1164,6 +1167,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "";
+				PROVISIONING_PROFILE = "4cad03d7-58ec-4cf4-9562-06a577240852";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../js-bindings/cocos2d-x/cocos/platform/ios $(SRCROOT)/../../js-bindings/external/spidermonkey/include/ios $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/auto $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/jsbindings/manual $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/plugins/facebook/proj.ios/PluginFacebook $(SRCROOT)/../../js-bindings/cocos2d-x/plugin/protocols/platform/ios";
